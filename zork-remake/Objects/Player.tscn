@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cjxeg83xd36sy"]
+
+[ext_resource type="Script" uid="uid://cbf7rj4fholh0" path="res://Code/Player.gd" id="1_xhfnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsw52"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D" unique_id=1235451594]
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662930550]
+shape = SubResource("RectangleShape2D_fsw52")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1738351646]
+color = Color(0.16078432, 0.18039216, 0, 1)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
