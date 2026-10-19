@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d0udtoo8v8y2s"]
+
+[ext_resource type="Script" uid="uid://dlopfo25hfnw2" path="res://sprite_2d.gd" id="1_f7cmv"]
+[ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="1_mehiu"]
+[ext_resource type="Script" uid="uid://d4hcicw38n5tl" path="res://test_sprite_inv_2.gd" id="3_lt4yx"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=20343428]
+
+[node name="TestSprite_Inv1" type="Sprite2D" parent="." unique_id=851816162]
+position = Vector2(324.1162, 251.99168)
+texture = ExtResource("1_mehiu")
+script = ExtResource("1_f7cmv")
+
+[node name="TestSprite_Inv2" type="Sprite2D" parent="." unique_id=1396956697]
+position = Vector2(708, 242)
+texture = ExtResource("1_mehiu")
+script = ExtResource("3_lt4yx")
