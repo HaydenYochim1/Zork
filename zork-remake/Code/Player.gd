@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var accel := 2000.0
 @export var friction := 2000.0
 
-@export var area: TileMapLayer
-
 # I feel like we will eventually need a variable to prevent moving
 # for when your in the inventory for example. 
 var can_move = true;

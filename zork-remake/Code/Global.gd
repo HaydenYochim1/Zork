@@ -1,4 +1,4 @@
 extends Node
 
 
-var loading_zone_id: int
+var loading_zone_id: int = -1

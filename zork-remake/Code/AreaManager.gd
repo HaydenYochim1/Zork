@@ -6,7 +6,8 @@ extends TileMapLayer
 
 
 func _ready() -> void:
-	player.global_position = entry_zones[Global.loading_zone_id].global_position
+	if Global.loading_zone_id >= 0:
+		player.global_position = entry_zones[Global.loading_zone_id].global_position
 
 func _process(delta: float) -> void:
 	check_area_change()
