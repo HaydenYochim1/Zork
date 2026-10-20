@@ -7,12 +7,14 @@ extends Node
 var upperLimit = 0
 var index = 0
 func _ready() -> void:
-	
-	pass # Replace with function body.
+	pass
 func _incrementUpperLimit():
 	upperLimit = upperLimit + 1
+
 func _decrementUpperLimit():
 	upperLimit = upperLimit - 1
+
+
 func _input(event):
 	#index inventory
 	if event is InputEventKey and event.is_action_pressed("ui_up") and index < upperLimit - 1: #event.is_action_pressed(""): #use arrow up to index up
@@ -45,18 +47,6 @@ func drop_selected_item() -> void:
 		index = clampi(index, 0, inventory.size() - 1)
 		print("Dropped: ", item.name)
 		print("Items remaining: ", inventory.size())
-
-	
-	
-
-
-
-
-
-
-# This typed array can only contain integers.
-# Attempting to add any other type will result in an error.
-var typed_array: Array[int] = [1, 2, 3]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
