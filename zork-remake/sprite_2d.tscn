@@ -11,5 +11,15 @@ position = Vector2(708, 242)
 texture = ExtResource("1_mehiu")
 script = ExtResource("3_lt4yx")
 
+[node name="TestSprite_Inv3" type="Sprite2D" parent="." unique_id=1600171460]
+position = Vector2(461, 227)
+texture = ExtResource("1_mehiu")
+script = ExtResource("3_lt4yx")
+
+[node name="TestSprite_Inv4" type="Sprite2D" parent="." unique_id=545445934]
+position = Vector2(226, 231)
+texture = ExtResource("1_mehiu")
+script = ExtResource("3_lt4yx")
+
 [node name="InventoryArray" type="Node" parent="." unique_id=170749284]
 script = ExtResource("3_i1wwn")
