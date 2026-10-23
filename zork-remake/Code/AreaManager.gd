@@ -33,6 +33,9 @@ func check_area_change() -> void:
 	if (tile.x == 2 and tile.y == 1):
 		nextArea = loading_zone_areas.get(4)
 		Global.loading_zone_id = 4
+	if (tile.x == 2 and tile.y == 2):
+		nextArea = loading_zone_areas.get(5)
+		Global.loading_zone_id = 5
 		
 	if (Global.loading_zone_id >= 0):
 		get_tree().change_scene_to_file(nextArea)
