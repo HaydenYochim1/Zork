@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bce0oic0i4ako"]
+
+[ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_pk8wk"]
+
+[node name="WhiteHouseOutside" type="Node2D" unique_id=56631326]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=221518071]
+tile_set = ExtResource("1_pk8wk")

@@ -8,6 +8,9 @@ extends CharacterBody2D
 # for when your in the inventory for example. 
 var can_move = true;
 
+func _ready() -> void:
+	self.global_position = Global.player_initial_map_position # set the players pos on scene load
+
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		velocity = Vector2.ZERO	
