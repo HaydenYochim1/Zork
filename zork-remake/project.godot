@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ZorkRemake"
-run/main_scene="uid://bxvlxq4y66u8d"
+run/main_scene="uid://bce0oic0i4ako"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

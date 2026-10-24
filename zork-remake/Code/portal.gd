@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	Global.player_initial_map_position = spawn_player_at
+	Global.player_initial_facing_direction = player_spawn_Direction
 	
 	if get_tree().change_scene_to_file(next_scene_path) != OK :
 		push_error("Error Scene change failed on object Portal.")
