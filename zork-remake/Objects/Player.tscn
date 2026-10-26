@@ -6,6 +6,8 @@
 size = Vector2(62, 62)
 
 [node name="Player" type="CharacterBody2D" unique_id=1235451594]
+collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_xhfnw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662930550]
@@ -14,3 +16,5 @@ shape = SubResource("RectangleShape2D_fsw52")
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1738351646]
 color = Color(0.16078432, 0.18039216, 0, 1)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1937191378]
