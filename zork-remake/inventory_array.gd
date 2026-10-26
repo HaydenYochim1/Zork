@@ -19,14 +19,15 @@ func _input(event):
 	#index inventory
 	if event is InputEventKey and event.is_action_pressed("ui_up") and index < upperLimit - 1: #event.is_action_pressed(""): #use arrow up to index up
 		index = index + 1 
-		print(index)
-		#print(inventory[index])
+		#print(index)
+		print(inventory)
 	elif event is InputEventKey and event.is_action_pressed("ui_down") and index > 0: #use arrow down to index down
 		index = index - 1
-		print(index)
+		#print(index)
+		print(inventory)
 	elif event.is_action_pressed("Drop"):
 		drop_selected_item()
-		#print(inventory[index])
+		print(inventory)
 	#if(event is InputEventKey):
 	#	inventory[index]._input
 func drop_selected_item() -> void:

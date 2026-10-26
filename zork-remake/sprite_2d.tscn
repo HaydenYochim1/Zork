@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://ci6xklm6ovxl7" path="res://inventory_array.gd" id="3_i1wwn"]
 [ext_resource type="Script" uid="uid://d4hcicw38n5tl" path="res://test_sprite_inv_2.gd" id="3_lt4yx"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=20343428]
-
-[node name="TestSprite_Inv2" type="Sprite2D" parent="." unique_id=1396956697]
-position = Vector2(708, 242)
-texture = ExtResource("1_mehiu")
-script = ExtResource("3_lt4yx")
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=20343428 groups=["player"]]
 
 [node name="TestSprite_Inv3" type="Sprite2D" parent="." unique_id=1600171460]
 position = Vector2(461, 227)
+texture = ExtResource("1_mehiu")
+script = ExtResource("3_lt4yx")
+
+[node name="TestSprite_Inv2" type="Sprite2D" parent="." unique_id=1396956697]
+position = Vector2(708, 242)
 texture = ExtResource("1_mehiu")
 script = ExtResource("3_lt4yx")
 
