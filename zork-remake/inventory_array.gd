@@ -26,11 +26,14 @@ func _input(event):
 		#print(index)
 		print(inventory)
 	elif event.is_action_pressed("Drop"):
-		drop_selected_item()
+		_drop_selected_item()
 		print(inventory)
+	elif event.is_action_pressed("UseItem"):
+		_useItem()
+		print("using Item")
 	#if(event is InputEventKey):
 	#	inventory[index]._input
-func drop_selected_item() -> void:
+func _drop_selected_item() -> void:
 	if inventory.is_empty():
 		return
 		
@@ -49,5 +52,14 @@ func drop_selected_item() -> void:
 		print("Dropped: ", item.name)
 		print("Items remaining: ", inventory.size())
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _useItem() -> void:
+	if inventory.is_empty():
+		return
+		
+	index = clampi(index, 0, inventory.size() - 1)
+	var item = inventory[index]
+	
+	item._use()
+	
 func _process(delta: float) -> void:
 	pass
