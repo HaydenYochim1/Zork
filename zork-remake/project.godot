@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ZorkRemake"
-run/main_scene="res://sprite_2d.tscn"
+run/main_scene="uid://bce0oic0i4ako"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -72,6 +72,15 @@ UseItem={
 ]
 }
 
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_3="PlayerHurtbox"
+2d_physics/layer_2="Player"
+2d_physics/layer_4="EnemyHurtbox"
+2d_physics/layer_5="Enemy"
+2d_physics/layer_6="port"
 [physics]
 
 3d/physics_engine="Jolt Physics"
