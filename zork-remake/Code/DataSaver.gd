@@ -1,3 +1,5 @@
 class_name DataSaver extends Resource
 
-@export var rooms: Array[RoomSaveData]
+@export var rooms: Dictionary
+
+@export var current_scene_path: String 

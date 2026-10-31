@@ -11,16 +11,12 @@ func load_data_from_scene(path: String) -> void:
 			var item = node as Item
 			items_in_room.append(Vector3(item.id, item.global_position.x, item.global_position.y))
 			
-func load_data_from_file(path: String) -> void:
-	ResourceSaver.save(self, path)
-	
-		
-	
-func save_data_to_file(path: String) -> void:
-	ResourceLoader.load(path, "RoomSaveData")
-
+# these three methods should connect to the enemy/item classes via signals
 func _on_enemy_defeat(enemy_id: int) -> void:
 	enemies_defeated_ids.append(enemy_id)
 
 func _on_item_pickup(item_id: int, coords: Vector2) -> void:
 	items_in_room.remove_at(items_in_room.find(Vector3(item_id, coords.x, coords.y)))
+
+func _on_item_use(item_id: int):
+	items_used_ids.append(item_id)
