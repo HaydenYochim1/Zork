@@ -72,6 +72,7 @@ func _perform_item_action() -> void:
 func _finish_use() -> void:
 	hide()
 	is_in_use = false
+	
 func _actionAnimation() -> void:
 	print("in motion")
 	var target_position = get_global_mouse_position()

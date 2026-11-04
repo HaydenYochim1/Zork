@@ -72,15 +72,15 @@ UseItem={
 ]
 }
 
-
 [layer_names]
 
 2d_physics/layer_1="World"
-2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_4="EnemyHurtbox"
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="port"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
