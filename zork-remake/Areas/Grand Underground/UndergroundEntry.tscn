@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="2_6yr63"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_ibj4r"]
 [ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="4_eqob0"]
+[ext_resource type="Script" uid="uid://ddhlf2pc4f00v" path="res://Areas/Grand Underground/ItemLoader.gd" id="4_xpmgk"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="5_fpnjj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wuf20"]
@@ -58,6 +59,10 @@ entry_zones = [NodePath("../StudioGallery_LoadingZone"), NodePath("../Maze_Loadi
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_ibj4r")]
 position = Vector2(256, 298)
+
+[node name="ItemLoader" type="Node2D" parent="." unique_id=1026533301]
+position = Vector2(256, 298)
+script = ExtResource("4_xpmgk")
 
 [node name="SootyRoom_LoadingZone" parent="." unique_id=582963403 instance=ExtResource("4_eqob0")]
 position = Vector2(94, 129)
