@@ -1,8 +1,7 @@
-extends Node
+class_name InventoryArray extends Resource
 
 
-# Called when the node enters the scene tree for the first time.
-@export var inventory = []
+var inventory := []
 
 var upperLimit = 0
 var index = 0
@@ -33,6 +32,7 @@ func _input(event):
 		print("using Item")
 	#if(event is InputEventKey):
 	#	inventory[index]._input
+
 func _drop_selected_item() -> void:
 	if inventory.is_empty():
 		return
@@ -51,7 +51,7 @@ func _drop_selected_item() -> void:
 		index = clampi(index, 0, inventory.size() - 1)
 		print("Dropped: ", item.name)
 		print("Items remaining: ", inventory.size())
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _useItem() -> void:
 	if inventory.is_empty():
 		return

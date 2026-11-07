@@ -6,7 +6,9 @@ var items: Dictionary = {
 }
 
 func _ready() -> void:
-	var room_save_data = Global.room_data[get_tree().current_scene.scene_file_path]
+	var root_path = get_tree().current_scene.scene_file_path
+	print(root_path)
+	var room_save_data = Global.room_data[root_path]
 	for item_data in room_save_data.items_in_room:
 		var item_to_add = items[item_data.x] # get item from id
 		item_to_add.global_position.x = item_data.y

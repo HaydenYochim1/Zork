@@ -12,7 +12,7 @@ var target_position = Vector2.ZERO
 var animation_time = 0.5
 var is_in_use = false
 var inventory_position = Vector2.ZERO
-@onready var inventoryArray = get_node("../InventoryArray")
+@onready var inventoryArray := InventoryArray.inventory
 #var upperLimit = InventoryArray.upperLimit
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:

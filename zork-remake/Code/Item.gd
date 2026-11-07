@@ -2,7 +2,6 @@ class_name Item extends Sprite2D
 
 @export var id: int
 
-
 var image_path: String
 
 func _init(ipath := texture.resource_path):

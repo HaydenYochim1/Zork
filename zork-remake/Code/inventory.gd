@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 @onready var item_list: ItemList = $PanelContainer/ItemList
-@onready var test_inventory_player: CharacterBody2D = $"../TestInventory"
-@onready var player: CharacterBody2D = $"../Player"
+@export var player: CharacterBody2D
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -19,7 +18,7 @@ func refresh():
 	if player == null:
 		return
 		
-	var inventory_array = test_inventory_player.get_node("InventoryArray")
+	var inventory_array = player.inventoryArray
 	
 	item_list.clear()
 	
