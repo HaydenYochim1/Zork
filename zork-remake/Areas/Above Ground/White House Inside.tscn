@@ -2,8 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_cr2e3"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_6crwy"]
+[ext_resource type="Texture2D" uid="uid://odgbebkwthhq" path="res://Assets/item_placeholder.jpg" id="4_f1b3i"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
 [ext_resource type="PackedScene" uid="uid://bqbn0xwq5ma4u" path="res://Objects/teleporter.tscn" id="4_wc2dx"]
+[ext_resource type="Script" uid="uid://dc6qgrlyk1017" path="res://Code/Item.gd" id="5_item"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemLoader.gd" id="6_qtswm"]
+[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="7_0dbe5"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
 
@@ -42,3 +46,15 @@ teleport_player_to = Vector2(827, 111)
 position = Vector2(831, 177)
 player = NodePath("../Player")
 teleport_player_to = Vector2(826, 280)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=414825467]
+position = Vector2(500, 100)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f1b3i")
+script = ExtResource("5_item")
+
+[node name="ItemLoader" type="Node2D" parent="." unique_id=698328360]
+script = ExtResource("6_qtswm")
+
+[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("7_0dbe5")]
+player = NodePath("../Player")
