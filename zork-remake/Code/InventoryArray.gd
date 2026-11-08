@@ -42,6 +42,7 @@ func _drop_selected_item() -> void:
 	item.show()
 	item.set("vis", true)
 	item.global_position = item.get_global_mouse_position()
+	item.on_drop(item.get_global_mouse_position())
 	inventory.remove_at(index)
 
 	# Keep the index within the remaining inventory.

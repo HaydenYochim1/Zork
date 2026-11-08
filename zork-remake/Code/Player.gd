@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var speed := 300.0
 @export var accel := 2000.0
@@ -15,7 +15,7 @@ func _ready() -> void:
 		Global.start("user://savedata.tres")
 	else:
 		Global.start()
-	
+		Global.room_data[get_tree().current_scene.scene_file_path].load_data_from_scene(get_tree().current_scene)
 	inventoryArray = Global.get_saved_inventory("user://savedata.tres")
 	
 func _physics_process(delta: float) -> void:
