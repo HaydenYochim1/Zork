@@ -12,7 +12,7 @@ var target_position = Vector2.ZERO
 var animation_time = 0.5
 var is_in_use = false
 var inventory_position = Vector2.ZERO
-@onready var inventoryArray = get_node("../InventoryArray")
+@onready var inventoryArray = get_node("../InventoryArray.gd")
 @onready var LanternLight = get_node("res://Areas/point_light_2d.gd")
 #var upperLimit = InventoryArray.upperLimit
 func _input(event):
