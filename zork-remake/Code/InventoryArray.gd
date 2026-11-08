@@ -1,7 +1,7 @@
 class_name InventoryArray extends Resource
 
 
-var inventory := []
+@export var inventory := []
 
 var upperLimit = 0
 var index = 0

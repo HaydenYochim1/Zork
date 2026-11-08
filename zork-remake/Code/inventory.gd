@@ -7,8 +7,7 @@ func _input(event):
 	if event.is_action_pressed("inventory"):
 		visible = not visible
 		player.can_move = not visible
-		if visible:
-			refresh()
+		refresh()
 	
 	if event.is_action_pressed("Drop"):
 		refresh()
@@ -18,7 +17,7 @@ func refresh():
 	if player == null:
 		return
 		
-	var inventory_array = player.inventoryArray
+	var inventory_array = Global.inventoryArray
 	
 	item_list.clear()
 	

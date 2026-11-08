@@ -1,7 +1,6 @@
 class_name Item extends Sprite2D
 
 @export var id: int
-@export var player: Player
 var vis = true #set false for items that are invisible until conditions are met
 var is_moving = false
 var move_speed = 200
@@ -21,7 +20,6 @@ func _ready() -> void:
 	img.load(image_path)
 	texture = ImageTexture.create_from_image(img)
 	scale = Vector2(64, 64)/texture.get_size()
-	player = get_node("../Player")
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,11 +28,10 @@ func _input(event: InputEvent):
 				#pickup item not in inventory
 				hide() #take off map
 				vis = false #define 
-				
-				player.inventoryArray._incrementUpperLimit()
-				player.inventoryArray.inventory.append(self)
-				
-				Global.room_data[get_tree().current_scene.scene_file_path].on_item_pickup(id, global_position)
+				Global.inventoryArray._incrementUpperLimit()
+				Global.inventoryArray.inventory.append(duplicate())
+				print("item pickup")
+				Global.room_data[get_tree().current_scene.scene_file_path].on_item_pickup(id)
 	
 func on_drop(coords: Vector2) -> void:
 	Global.room_data[get_tree().current_scene.scene_file_path].on_item_drop(id, coords)

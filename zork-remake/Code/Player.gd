@@ -4,20 +4,25 @@ class_name Player extends CharacterBody2D
 @export var accel := 2000.0
 @export var friction := 2000.0
 
+signal data_done_loading
 # I feel like we will eventually need a variable to prevent moving
 # for when your in the inventory for example. 
 var can_move = true
-var inventoryArray: InventoryArray
 
 func _ready() -> void:
-	self.global_position = Global.player_initial_map_position # set the players pos on scene load
+	self.global_position = Global.player_initial_map_position # set the players pos on scene load5
 	if FileAccess.file_exists("user://savedata.tres"):
 		Global.start("user://savedata.tres")
 	else:
 		Global.start()
 		Global.room_data[get_tree().current_scene.scene_file_path].load_data_from_scene(get_tree().current_scene)
-	inventoryArray = Global.get_saved_inventory("user://savedata.tres")
+		print("no save file, loadbing")
 	
+	data_done_loading.connect(get_node("../ItemManager").remove_items)
+	data_done_loading.emit()
+	
+	
+		
 func _physics_process(delta: float) -> void:
 	
 	if not can_move:

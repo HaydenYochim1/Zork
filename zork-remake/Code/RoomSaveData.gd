@@ -6,7 +6,9 @@ class_name RoomSaveData extends Resource
 
 func load_data_from_scene(root: Node2D) -> void:
 	for node in root.get_children():
+		print("there are children")
 		if node is Item:
+			print("item found")
 			var item = node as Item
 			items_in_room.append(Vector3(item.id, item.global_position.x, item.global_position.y))
 			
@@ -14,12 +16,19 @@ func load_data_from_scene(root: Node2D) -> void:
 func on_enemy_defeat(enemy_id: int) -> void:
 	enemies_defeated_ids.append(enemy_id)
 
-func on_item_pickup(item_id: int, coords: Vector2) -> void:
-	
-	items_in_room.remove_at(items_in_room.find(Vector3(item_id, coords.x, coords.y)))
+func on_item_pickup(item_id: int) -> void:
+	items_in_room.remove_at(find_item_in_room(item_id))
 	
 func on_item_drop(item_id: int, coords: Vector2) -> void:
 	items_in_room.append(Vector3(item_id, coords.x, coords.y))
 	
 func on_item_use(item_id: int):
 	items_used_ids.append(item_id)
+	
+func find_item_in_room(id: int) -> int:
+	for i in range(items_in_room.size()):
+		if items_in_room.get(i).x == id:
+			return i
+	
+	#not found, return -1
+	return -1
