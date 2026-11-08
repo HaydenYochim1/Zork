@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bfkcesxh65oc"]
+
+[ext_resource type="Script" uid="uid://c8sbvkjbwxlvj" path="res://Code/portal.gd" id="1_j8krn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e22rh"]
+size = Vector2(54, 50)
+
+[node name="Portal" type="Area2D" unique_id=608531790]
+editor_description = "This object is what is resposable for changing the scene. just put in the file, the pos the player needs to int. to and the direction the player should be facing on load.
+
+you can also input the size of the portal"
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_j8krn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=566401184]
+shape = SubResource("RectangleShape2D_e22rh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://df86u7a214rg2"]
+
+[ext_resource type="Script" uid="uid://bfruovkga5vo7" path="res://Code/CameraController.gd" id="1_quavd"]
+
+[node name="Camera" type="Camera2D" unique_id=1694891149 node_paths=PackedStringArray("player")]
+script = ExtResource("1_quavd")
+player = NodePath("")
+upper_left_bound = Vector2(0, -320)
+lower_right_bound = Vector2(1472, 2048)

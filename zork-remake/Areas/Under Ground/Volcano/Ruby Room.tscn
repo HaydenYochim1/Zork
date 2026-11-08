@@ -1,0 +1,27 @@
+[gd_scene format=4 uid="uid://dge2f45nlayay"]
+
+[ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_4vvp0"]
+[ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="2_uiqv8"]
+[ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="3_r6aqw"]
+
+[node name="RubyRoom" type="Node2D" unique_id=1518782930]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1337688670]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD8//z/AwAAAAQAAAD8//3/AwAAAAQAAAD8//7/AwAAAAQAAAD8////AwAAAAQAAAD9//z/AwABAAQAAAD9//3/AwABAAQAAAD9//7/AwABAAQAAAD9////AwABAAQAAAD+//z/AwABAAQAAAD+//3/AwABAAQAAAD+//7/AwABAAQAAAD+////AwABAAQAAAD///z/AwABAAQAAAD///3/AwABAAQAAAD///7/AwABAAQAAAD/////AwABAAQAAAAAAPz/AwABAAQAAAAAAP3/AwABAAQAAAAAAP7/AwABAAQAAAAAAP//AwABAAQAAAABAPz/AwABAAQAAAABAP3/AwABAAQAAAABAP7/AwABAAQAAAABAP//AwABAAQAAAACAPz/AwADAAQAAAACAP3/AwABAAQAAAACAP7/AwABAAQAAAACAP//AwABAAQAAAADAPz/AwACAAMAAAADAP3/AwACAAQAAAADAP7/AwACAAQAAAADAP//AwACAAQAAAAAAAAAAwABAAQAAAAAAAEAAwABAAQAAAAAAAIAAwABAAQAAAAAAAMAAwABAAUAAAABAAAAAwABAAQAAAABAAEAAwABAAQAAAABAAIAAwABAAQAAAABAAMAAwABAAUAAAACAAAAAwABAAQAAAACAAEAAwABAAQAAAACAAIAAwABAAQAAAACAAMAAwABAAUAAAADAAAAAwACAAQAAAADAAEAAwACAAQAAAADAAIAAwACAAQAAAADAAMAAwACAAUAAAD8/wAAAwAAAAQAAAD8/wEAAwAAAAUAAAD9/wAAAwABAAQAAAD9/wEAAwAEAAMAAAD9/wIAAwAAAAQAAAD9/wMAAwAAAAUAAAD+/wAAAwABAAQAAAD+/wEAAwABAAQAAAD+/wIAAwABAAQAAAD+/wMAAwABAAUAAAD//wAAAwABAAQAAAD//wEAAwABAAQAAAD//wIAAwABAAQAAAD//wMAAwABAAUAAAD8//r/AwAAAAMAAAD8//v/AwAAAAQAAAD9//r/AwABAAMAAAD9//v/AwABAAQAAAD+//r/AwABAAMAAAD+//v/AwABAAQAAAD///r/AwABAAMAAAD///v/AwABAAQAAAAAAPr/AwABAAMAAAAAAPv/AwABAAQAAAABAPr/AwACAAMAAAABAPv/AwADAAQAAAACAPv/AwACAAMAAAD7//z/AwAHAAQAAAD7//3/AwAHAAUAAAABAAQAAwAHAAYAAAAAAAQAAwAHAAMAAAA=")
+tile_set = ExtResource("1_4vvp0")
+
+[node name="Player" parent="." unique_id=1235451594 instance=ExtResource("2_uiqv8")]
+position = Vector2(65, 180)
+
+[node name="Portal [Lava hallway]" parent="." unique_id=608531790 instance=ExtResource("3_r6aqw")]
+position = Vector2(-231, -190)
+next_scene_path = "uid://s6588vgisv1c"
+spawn_player_at = Vector2(1317, -192)
+size = Vector2(20, 100)
+
+[node name="Portal [Glacer Hallway]" parent="." unique_id=1618384850 instance=ExtResource("3_r6aqw")]
+position = Vector2(64, 234)
+next_scene_path = "uid://cohypt6lvrkhr"
+spawn_player_at = Vector2(-1219, 92)
+size = Vector2(100, 20)
