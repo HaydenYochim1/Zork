@@ -3,9 +3,8 @@
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_cr2e3"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_6crwy"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
-[ext_resource type="PackedScene" uid="uid://bqbn0xwq5ma4u" path="res://Objects/teleporter.tscn" id="4_wc2dx"]
 [ext_resource type="Script" uid="uid://dc6qgrlyk1017" path="res://Code/Item.gd" id="4_wc2dx"]
-[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemLoader.gd" id="6_qtswm"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_qtswm"]
 [ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="7_0dbe5"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
@@ -18,7 +17,7 @@ rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("4_jfpr3")]
-position = Vector2(576, -48)
+position = Vector2(615, 310)
 
 [node name="Portal [front door]" parent="." unique_id=608531790 instance=ExtResource("2_6crwy")]
 position = Vector2(270, 325)
@@ -33,35 +32,28 @@ next_scene_path = "uid://bce0oic0i4ako"
 spawn_player_at = Vector2(1086, -67)
 size = Vector2(32, 100)
 
+[node name="Portal [Atic]" parent="." unique_id=625471815 instance=ExtResource("2_6crwy")]
+position = Vector2(826, 176)
+next_scene_path = "uid://bxvlxq4y66u8d"
+spawn_player_at = Vector2(828, 274)
+size = Vector2(50, 32)
+
+[node name="Portal [Atic]2" parent="." unique_id=538401539 instance=ExtResource("2_6crwy")]
+position = Vector2(827, 222)
+next_scene_path = "uid://bxvlxq4y66u8d"
+spawn_player_at = Vector2(825, 112)
+size = Vector2(50, 32)
+
 [node name="Portal [To Celler]" parent="." unique_id=60193405 instance=ExtResource("2_6crwy")]
-position = Vector2(575, -105)
-next_scene_path = "uid://cprfy3lqaxefi"
-spawn_player_at = Vector2(225, 418)
-size = Vector2(100, 20)
+position = Vector2(576, -87)
 
-[node name="Portal [To Studio]" parent="." unique_id=1190014610 instance=ExtResource("2_6crwy")]
-position = Vector2(962, 617)
-next_scene_path = "uid://cd7d2t2twbhm6"
-spawn_player_at = Vector2(386, 1020)
-size = Vector2(100, 20)
-
-[node name="Teleporter [To Atic]" parent="." unique_id=15430302 node_paths=PackedStringArray("player") instance=ExtResource("4_wc2dx")]
-position = Vector2(832, 226)
-player = NodePath("../Player")
-teleport_player_to = Vector2(827, 111)
-
-[node name="Teleporter [From Atic]" parent="." unique_id=2055359508 node_paths=PackedStringArray("player") instance=ExtResource("4_wc2dx")]
-position = Vector2(831, 177)
-player = NodePath("../Player")
-teleport_player_to = Vector2(826, 280)
-
-[node name="Placeholder" type="Sprite2D" parent="." unique_id=414825467 node_paths=PackedStringArray("player")]
+[node name="Placeholder" type="Sprite2D" parent="." unique_id=414825467]
 position = Vector2(500, 100)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_f1b3i")
 script = ExtResource("4_wc2dx")
+image_path = "res://Assets/item_placeholder.jpg"
 
-[node name="ItemLoader" type="Node2D" parent="." unique_id=698328360]
+[node name="ItemManager" type="Node2D" parent="." unique_id=698328360]
 script = ExtResource("6_qtswm")
 
 [node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("7_0dbe5")]

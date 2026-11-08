@@ -5,6 +5,3 @@ class_name DataSaver extends Resource
 @export var current_scene_path: String 
 
 @export var inventory: InventoryArray
-
-func _init():
-	inventory = InventoryArray.new()
