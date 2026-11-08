@@ -4,19 +4,22 @@ class_name RoomSaveData extends Resource
 @export var items_in_room: PackedVector3Array # id and coordinates
 @export var items_used_ids: Array[int] # id of any items that have been used
 
-func load_data_from_scene(path: String) -> void:
-	var root: Node2D = load(path).instantiate()
+func load_data_from_scene(root: Node2D) -> void:
 	for node in root.get_children():
 		if node is Item:
 			var item = node as Item
 			items_in_room.append(Vector3(item.id, item.global_position.x, item.global_position.y))
 			
 # these three methods should connect to the enemy/item classes via signals
-func _on_enemy_defeat(enemy_id: int) -> void:
+func on_enemy_defeat(enemy_id: int) -> void:
 	enemies_defeated_ids.append(enemy_id)
 
-func _on_item_pickup(item_id: int, coords: Vector2) -> void:
+func on_item_pickup(item_id: int, coords: Vector2) -> void:
+	
 	items_in_room.remove_at(items_in_room.find(Vector3(item_id, coords.x, coords.y)))
-
-func _on_item_use(item_id: int):
+	
+func on_item_drop(item_id: int, coords: Vector2) -> void:
+	items_in_room.append(Vector3(item_id, coords.x, coords.y))
+	
+func on_item_use(item_id: int):
 	items_used_ids.append(item_id)
