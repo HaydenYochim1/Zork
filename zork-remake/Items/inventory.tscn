@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cltj2vbqq8cv"]
 
-[ext_resource type="Script" uid="uid://dd56ufkx2s1h2" path="res://inventory.gd" id="1_pohso"]
+[ext_resource type="Script" uid="uid://dd56ufkx2s1h2" path="res://Items/inventory.gd" id="1_pohso"]
 
 [node name="inventory" type="CanvasLayer" unique_id=1577688369]
 visible = false

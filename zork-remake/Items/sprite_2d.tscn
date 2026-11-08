@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d0udtoo8v8y2s"]
 
 [ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="1_mehiu"]
-[ext_resource type="Script" uid="uid://ci6xklm6ovxl7" path="res://inventory_array.gd" id="3_i1wwn"]
-[ext_resource type="Script" uid="uid://d4hcicw38n5tl" path="res://test_sprite_inv_2.gd" id="3_lt4yx"]
+[ext_resource type="Script" uid="uid://ci6xklm6ovxl7" path="res://Items/inventory_array.gd" id="3_i1wwn"]
+[ext_resource type="Script" uid="uid://d4hcicw38n5tl" path="res://Items/test_sprite_inv_2.gd" id="3_lt4yx"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=20343428 groups=["player"]]
 

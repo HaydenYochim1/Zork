@@ -44,6 +44,7 @@ pattern_1 = SubResource("TileMapPattern_ikc7c")
 pattern_2 = SubResource("TileMapPattern_fpnjj")
 
 [sub_resource type="Gradient" id="Gradient_fpnjj"]
+offsets = PackedFloat32Array(0.45783132, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1sea3"]
@@ -70,8 +71,8 @@ entry_zones = [NodePath("../StudioGallery_LoadingZone"), NodePath("../Maze_Loadi
 position = Vector2(256, 298)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=16108759]
-position = Vector2(483.5, -139.50002)
-scale = Vector2(25.046875, 16.984375)
+position = Vector2(2.0000916, 1)
+scale = Vector2(26.983665, 17.810368)
 color = Color(0.6477787, 0.5778555, 0.42629787, 1)
 texture = SubResource("GradientTexture2D_1sea3")
 texture_scale = 0.55

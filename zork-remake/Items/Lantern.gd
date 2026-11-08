@@ -22,10 +22,12 @@ func _input(event):
 				#pickup item not in inventory
 				hide() #take off map
 				vis = false #define visibility
+				inventoryArray.inventory.append(self)
+				inventoryArray._incrementUpperLimit()
 				#print("test Node 2") #testing print, delete in prod
 				
-				inventoryArray._incrementUpperLimit()
-				inventoryArray.inventory.append(self)
+				
+				
 		
 			#else:
 				#pickup item that is already in inventory
@@ -57,7 +59,6 @@ func _use() -> void:
 	print("in use")
 	hide()
 	is_in_use = false
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

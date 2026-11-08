@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_6crwy"]
 [ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="4_f1b3i"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
-[ext_resource type="Script" uid="uid://p4h57vemgdax" path="res://Areas/Above Ground/Lantern.gd" id="5_qtswm"]
+[ext_resource type="Script" uid="uid://p4h57vemgdax" path="res://Items/Lantern.gd" id="5_qtswm"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
 
