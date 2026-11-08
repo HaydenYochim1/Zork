@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpeakingScrollItem" format=3 uid="uid://dcpny6kcf61w6"]
+
+[ext_resource type="Script" uid="uid://cfchnx4xy2i8n" path="res://inventory/speaking_scroll_item.gd" id="1_icx1m"]
+[ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://inventory/items/speaking_scroll_sprite.png" id="2_xkb5o"]
+
+[resource]
+script = ExtResource("1_icx1m")
+name = "Speaking Scroll"
+texture = ExtResource("2_xkb5o")
+metadata/_custom_type_script = "uid://bkvojrooktfvs"

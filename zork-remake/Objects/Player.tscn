@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsw52"]
 size = Vector2(62, 62)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcuty"]
+size = Vector2(92, 86)
+
 [node name="Player" type="CharacterBody2D" unique_id=1235451594]
 script = ExtResource("1_xhfnw")
 
@@ -14,3 +17,10 @@ shape = SubResource("RectangleShape2D_fsw52")
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1738351646]
 color = Color(0.16078432, 0.18039216, 0, 1)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=299766470]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1719777827]
+shape = SubResource("RectangleShape2D_pcuty")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

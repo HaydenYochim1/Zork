@@ -3,9 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://c1i4fy35mx4ag" path="res://Assets/pixil-frame-0.png" id="1_xi01q"]
 [ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="2_twams"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_cmgsc"]
-[ext_resource type="PackedScene" uid="uid://d0udtoo8v8y2s" path="res://sprite_2d.tscn" id="3_twams"]
+[ext_resource type="Resource" uid="uid://c6nb111ss87yo" path="res://inventory/items/player_inventory.tres" id="3_efths"]
 [ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="4_efths"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://inventory.tscn" id="5_twams"]
+[ext_resource type="PackedScene" uid="uid://wq647gc0cui4" path="res://inventory/speaking_scroll.tscn" id="7_efths"]
+[ext_resource type="PackedScene" uid="uid://cs0uhy0jmuc5p" path="res://inventory/hotbar.tscn" id="8_rjhu7"]
+[ext_resource type="PackedScene" uid="uid://dqjuooar663c8" path="res://inventory/inventory_gui.tscn" id="8_s6drg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xi01q"]
 
@@ -33,9 +35,17 @@ sources/0 = SubResource("TileSetAtlasSource_twams")
 
 [node name="Node2D" type="Node2D" unique_id=463793716 groups=["player"]]
 
+[node name="InventoryGUI" parent="." unique_id=1832771887 instance=ExtResource("8_s6drg")]
+z_index = 11
+offset_left = 320.0
+offset_top = 164.0
+offset_right = 448.0
+offset_bottom = 244.0
+
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_cmgsc")]
 z_index = 7
 position = Vector2(330, 424)
+inventory = ExtResource("3_efths")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=279957938 node_paths=PackedStringArray("player", "entry_zones") groups=["player"]]
 position = Vector2(1, 0)
@@ -61,6 +71,21 @@ position = Vector2(571, 100)
 [node name="LoadingZone_Left" parent="." unique_id=90164296 instance=ExtResource("4_efths")]
 position = Vector2(103, 317)
 
-[node name="inventory" parent="." unique_id=1577688369 groups=["player"] instance=ExtResource("5_twams")]
+[node name="SpeakingScroll" parent="." unique_id=299334244 instance=ExtResource("7_efths")]
+position = Vector2(484, 405)
 
-[node name="TestInventory" parent="." unique_id=20343428 instance=ExtResource("3_twams")]
+[node name="SpeakingScroll2" parent="." unique_id=1826740722 instance=ExtResource("7_efths")]
+position = Vector2(117, 437)
+
+[node name="SpeakingScroll3" parent="." unique_id=1782836902 instance=ExtResource("7_efths")]
+position = Vector2(903, 339)
+
+[node name="SpeakingScroll4" parent="." unique_id=795149443 instance=ExtResource("7_efths")]
+position = Vector2(374, 531)
+
+[node name="Hotbar" parent="." unique_id=871179393 instance=ExtResource("8_rjhu7")]
+z_index = 11
+offset_left = 344.0
+offset_top = 496.0
+offset_right = 460.0
+offset_bottom = 536.0

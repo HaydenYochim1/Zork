@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wnc88poe0ain"
-path="res://.godot/imported/speaking_scroll_sprite.png-6ad2c0937aff89b1db4a175172fa3751.ctex"
+path="res://.godot/imported/speaking_scroll_sprite.png-7535fe5d8474d15d7e568d0cb12cd9cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/speaking_scroll_sprite.png"
-dest_files=["res://.godot/imported/speaking_scroll_sprite.png-6ad2c0937aff89b1db4a175172fa3751.ctex"]
+source_file="res://inventory/items/speaking_scroll_sprite.png"
+dest_files=["res://.godot/imported/speaking_scroll_sprite.png-7535fe5d8474d15d7e568d0cb12cd9cf.ctex"]
 
 [params]
 

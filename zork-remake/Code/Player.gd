@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var accel := 2000.0
 @export var friction := 2000.0
 
+@export var inventory: Inventory
+
+
+
+
 # I feel like we will eventually need a variable to prevent moving
 # for when your in the inventory for example. 
 var can_move = true;
@@ -23,3 +28,7 @@ func _physics_process(delta: float) -> void:
 			
 	move_and_slide()
 	
+	
+func _on_hurt_box_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
