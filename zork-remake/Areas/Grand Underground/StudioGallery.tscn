@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="2_c8wex"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_ypdri"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="4_cqx1s"]
-[ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="5_v3dkg"]
+[ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="5_3yb2a"]
 
 [node name="Node2D" type="Node2D" unique_id=1644618302]
 
@@ -15,20 +15,28 @@ tile_set = ExtResource("1_guifi")
 script = ExtResource("2_c8wex")
 player = NodePath("../Player")
 loading_zone_areas = PackedStringArray("res://Areas/UndergroundEntry.tscn", "", "", "")
-entry_zones = [null, null, NodePath("../UnderGroundEntry-LoadingZone")]
+entry_zones = [null, null, null]
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_ypdri")]
+position = Vector2(27, 453)
 
 [node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("4_cqx1s")]
 player = NodePath("../Player")
 upper_left_bound = Vector2(-768, -320)
 lower_right_bound = Vector2(704, 1152)
 
-[node name="UnderGroundEntry-LoadingZone" parent="." unique_id=582963403 instance=ExtResource("5_v3dkg")]
-position = Vector2(-477, -157)
+[node name="Portal [White House]" parent="." unique_id=608531790 instance=ExtResource("5_3yb2a")]
+position = Vector2(330, 1025)
+next_scene_path = "uid://bxvlxq4y66u8d"
+spawn_player_at = Vector2(964, 565)
+size = Vector2(20, 100)
 
-[node name="Bank_LoadingZone" parent="." unique_id=2084178170 instance=ExtResource("5_v3dkg")]
-position = Vector2(-224, 448)
+[node name="Portal [Bank]" parent="." unique_id=1301880203 instance=ExtResource("5_3yb2a")]
+position = Vector2(-245, 451)
+size = Vector2(20, 100)
 
-[node name="Kitchen_LoadingZone" parent="." unique_id=802420324 instance=ExtResource("5_v3dkg")]
-position = Vector2(352, 1024)
+[node name="Portal [Cellar]" parent="." unique_id=1657382433 instance=ExtResource("5_3yb2a")]
+position = Vector2(-479, -184)
+next_scene_path = "uid://cprfy3lqaxefi"
+spawn_player_at = Vector2(271, 526)
+size = Vector2(100, 20)

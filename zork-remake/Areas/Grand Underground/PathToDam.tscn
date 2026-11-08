@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="2_ddv64"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_ynmu1"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="4_xuxns"]
-[ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="5_ep27l"]
+[ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="6_iuu01"]
 
 [node name="Node2D" type="Node2D" unique_id=244713419]
 
@@ -15,24 +15,31 @@ tile_set = ExtResource("1_ryh13")
 script = ExtResource("2_ddv64")
 player = NodePath("../Player")
 loading_zone_areas = PackedStringArray("", "", "res://Areas/RoundRoom.tscn", "", "", "")
-entry_zones = [null, null, null, null, null, NodePath("../RoundRoom_Loading_Zone")]
+entry_zones = [null, null, null, null, null, NodePath("")]
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_ynmu1")]
-position = Vector2(0, -64)
+position = Vector2(125, -1985)
 
 [node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("4_xuxns")]
 player = NodePath("../Player")
 upper_left_bound = Vector2(-1792, -2112)
 lower_right_bound = Vector2(1216, 192)
 
-[node name="RoundRoom_Loading_Zone" parent="." unique_id=582963403 instance=ExtResource("5_ep27l")]
-position = Vector2(0, 32)
+[node name="Portal [Round Room]" parent="." unique_id=608531790 instance=ExtResource("6_iuu01")]
+position = Vector2(-2, 57)
+spawn_player_at = Vector2(2687, -1029)
+size = Vector2(100, 20)
 
-[node name="Dome_LoadingZone" parent="." unique_id=710454577 instance=ExtResource("5_ep27l")]
-position = Vector2(-1600, 96)
+[node name="Portal2 [Deep Ravine]" parent="." unique_id=1316786004 instance=ExtResource("6_iuu01")]
+position = Vector2(-1648, 98)
+size = Vector2(20, 100)
 
-[node name="AncientChasem_LoadingZone" parent="." unique_id=934888677 instance=ExtResource("5_ep27l")]
-position = Vector2(1024, -576)
+[node name="Portal [Ancient Chasem]" parent="." unique_id=33085184 instance=ExtResource("6_iuu01")]
+position = Vector2(1084, -576)
+size = Vector2(20, 100)
 
-[node name="Dam_LoadingZone" parent="." unique_id=116015718 instance=ExtResource("5_ep27l")]
-position = Vector2(96, -1984)
+[node name="Portal [Flood Control]" parent="." unique_id=1701106702 instance=ExtResource("6_iuu01")]
+position = Vector2(70, -1986)
+next_scene_path = "uid://c7k2eumnue0jy"
+spawn_player_at = Vector2(921, 925)
+size = Vector2(20, 100)

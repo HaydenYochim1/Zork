@@ -19,7 +19,7 @@ rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("4_jfpr3")]
-position = Vector2(615, 310)
+position = Vector2(576, -48)
 
 [node name="Portal [front door]" parent="." unique_id=608531790 instance=ExtResource("2_6crwy")]
 position = Vector2(270, 325)
@@ -35,7 +35,16 @@ spawn_player_at = Vector2(1086, -67)
 size = Vector2(32, 100)
 
 [node name="Portal [To Celler]" parent="." unique_id=60193405 instance=ExtResource("2_6crwy")]
-position = Vector2(576, -87)
+position = Vector2(575, -105)
+next_scene_path = "uid://cprfy3lqaxefi"
+spawn_player_at = Vector2(225, 418)
+size = Vector2(100, 20)
+
+[node name="Portal [To Studio]" parent="." unique_id=1190014610 instance=ExtResource("2_6crwy")]
+position = Vector2(962, 617)
+next_scene_path = "uid://cd7d2t2twbhm6"
+spawn_player_at = Vector2(386, 1020)
+size = Vector2(100, 20)
 
 [node name="Teleporter [To Atic]" parent="." unique_id=15430302 node_paths=PackedStringArray("player") instance=ExtResource("4_wc2dx")]
 position = Vector2(832, 226)

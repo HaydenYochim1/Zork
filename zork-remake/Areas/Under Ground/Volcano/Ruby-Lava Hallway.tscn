@@ -1,0 +1,27 @@
+[gd_scene format=4 uid="uid://s6588vgisv1c"]
+
+[ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_b7ifr"]
+[ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_wqlrh"]
+[ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_wqlrh"]
+
+[node name="RubyLavaHallway" type="Node2D" unique_id=889505862]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1915225636]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAJAAkAAwACAAUAAAAJAAgAAwACAAMAAAAIAAgAAwABAAMAAAAHAAcAAwACAAQAAAAHAAYAAwACAAQAAAAHAAUAAwACAAQAAAAHAAQAAwACAAQAAAAHAAMAAwACAAQAAAAHAAIAAwACAAQAAAAHAAEAAwACAAQAAAAHAAAAAwACAAQAAAAHAP//AwACAAQAAAAHAP7/AwACAAQAAAAIAP3/AwABAAUAAAAJAP3/AwABAAUAAAAKAP3/AwABAAUAAAALAP3/AwABAAUAAAAMAP3/AwABAAUAAAANAP3/AwABAAUAAAAOAP3/AwABAAUAAAAPAP3/AwABAAUAAAAQAP3/AwABAAUAAAARAP3/AwABAAUAAAASAP3/AwABAAUAAAATAP3/AwABAAUAAAAUAP3/AwABAAUAAAAVAP3/AwACAAUAAAAVAPz/AwACAAMAAAAUAPz/AwABAAMAAAATAPz/AwABAAMAAAASAPz/AwABAAMAAAARAPz/AwABAAMAAAAQAPz/AwABAAMAAAAPAPz/AwABAAMAAAAOAPz/AwABAAMAAAANAPz/AwABAAMAAAAMAPz/AwABAAMAAAALAPz/AwABAAMAAAAKAPz/AwABAAMAAAAJAPz/AwABAAMAAAAIAPz/AwABAAMAAAAHAPz/AwABAAMAAAAGAPz/AwAAAAMAAAAGAP3/AwAAAAQAAAAGAP7/AwAAAAQAAAAGAP//AwAAAAQAAAAGAAAAAwAAAAQAAAAGAAEAAwAAAAQAAAAGAAIAAwAAAAQAAAAGAAMAAwAAAAQAAAAGAAQAAwAAAAQAAAAGAAUAAwAAAAQAAAAGAAYAAwAAAAQAAAAGAAcAAwAAAAQAAAAGAAgAAwAAAAQAAAAGAAkAAwAAAAUAAAAHAAkAAwABAAUAAAAIAAkAAwABAAUAAAAHAAgAAwADAAQAAAAHAP3/AwADAAMAAAAKAAgAAwAHAAQAAAAWAPz/AwAHAAQAAAAWAP3/AwAHAAUAAAAKAAkAAwAHAAUAAAA=")
+tile_set = ExtResource("1_b7ifr")
+
+[node name="Portal [Lava Room]" parent="." unique_id=608531790 instance=ExtResource("2_wqlrh")]
+position = Vector2(615, 578)
+next_scene_path = "uid://gpsymcgysqv6"
+spawn_player_at = Vector2(-310, 2)
+size = Vector2(20, 100)
+
+[node name="Portal [Ruby Room]" parent="." unique_id=1234010832 instance=ExtResource("2_wqlrh")]
+position = Vector2(1382, -189)
+next_scene_path = "uid://dge2f45nlayay"
+spawn_player_at = Vector2(-166, -189)
+size = Vector2(20, 100)
+
+[node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_wqlrh")]
+position = Vector2(1317, -192)

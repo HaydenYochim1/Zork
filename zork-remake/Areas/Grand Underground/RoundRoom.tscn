@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_tof7q"]
 [ext_resource type="Script" uid="uid://bfruovkga5vo7" path="res://Code/CameraController.gd" id="4_6kecy"]
 [ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="5_54umg"]
+[ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="6_yj33q"]
 
 [node name="Node2D" type="Node2D" unique_id=690758868]
 
@@ -17,10 +18,10 @@ physics_quadrant_size = 32
 script = ExtResource("2_pw6b8")
 player = NodePath("../Player")
 loading_zone_areas = PackedStringArray("res://Areas/Test_Area.tscn", "res://Areas/Test_Right.tscn", "res://Areas/Well.tscn", "res://Areas/UndergroundEntry.tscn", "", "res://Areas/PathToDam.tscn")
-entry_zones = [NodePath("../Well_LoadingZone"), null, NodePath("../PathToDam_LoadingZone"), null, NodePath("../UnderGroundEntry_LoadingZone"), null]
+entry_zones = [NodePath("../Well_LoadingZone"), null, NodePath(""), null, NodePath(""), null]
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_tof7q")]
-position = Vector2(299, -250)
+position = Vector2(128, -247)
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1750336691 node_paths=PackedStringArray("player")]
 position = Vector2(575, 325)
@@ -28,15 +29,6 @@ script = ExtResource("4_6kecy")
 player = NodePath("../Player")
 upper_left_bound = Vector2(0, -1216)
 lower_right_bound = Vector2(4480, 3840)
-
-[node name="UnderGroundEntry_LoadingZone" parent="." unique_id=582963403 instance=ExtResource("5_54umg")]
-position = Vector2(95, -259)
-
-[node name="PathToDam_LoadingZone" parent="." unique_id=1887270202 instance=ExtResource("5_54umg")]
-position = Vector2(2688, -1056)
-
-[node name="DeepCanyon_LoadingZone" parent="." unique_id=493971965 instance=ExtResource("5_54umg")]
-position = Vector2(1280, -1056)
 
 [node name="TwistyPassages_LoadingZone" parent="." unique_id=970971674 instance=ExtResource("5_54umg")]
 position = Vector2(1312, 448)
@@ -46,3 +38,21 @@ position = Vector2(3488, 1984)
 
 [node name="LivingDead" parent="." unique_id=1233122729 instance=ExtResource("5_54umg")]
 position = Vector2(4384, 704)
+
+[node name="Portal [Deep Canyon]" parent="." unique_id=608531790 instance=ExtResource("6_yj33q")]
+position = Vector2(1279, -1078)
+next_scene_path = "uid://c7p2ypsqph7at"
+spawn_player_at = Vector2(1348, 2196)
+size = Vector2(100, 20)
+
+[node name="Portal Chasm-Loud Room Hallway" parent="." unique_id=2081535770 instance=ExtResource("6_yj33q")]
+position = Vector2(2689, -1086)
+next_scene_path = "uid://c5bkpgqlo05w5"
+spawn_player_at = Vector2(-3, 0)
+size = Vector2(100, 20)
+
+[node name="Portal [Celler]" parent="." unique_id=700612327 instance=ExtResource("6_yj33q")]
+position = Vector2(67, -253)
+next_scene_path = "uid://cprfy3lqaxefi"
+spawn_player_at = Vector2(1344, -191)
+size = Vector2(20, 100)

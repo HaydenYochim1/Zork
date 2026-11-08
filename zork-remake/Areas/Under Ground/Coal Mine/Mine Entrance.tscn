@@ -13,11 +13,15 @@ tile_set = ExtResource("1_dyen5")
 
 [node name="Portal [Slide]" parent="." unique_id=608531790 instance=ExtResource("2_gdyd4")]
 position = Vector2(0, 169)
+next_scene_path = "uid://cprfy3lqaxefi"
+spawn_player_at = Vector2(128, 123)
 player_spawn_Direction = 2
 size = Vector2(100, 20)
 
 [node name="Portal [Mirror Room]" parent="." unique_id=296064866 instance=ExtResource("2_gdyd4")]
 position = Vector2(362, -67)
+next_scene_path = "uid://bwwubhmhtrvkt"
+spawn_player_at = Vector2(-2853, 0)
 player_spawn_Direction = 1
 size = Vector2(20, 100)
 
@@ -33,4 +37,4 @@ position = Vector2(1061, -805)
 size = Vector2(64, 64)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_8hxej")]
-position = Vector2(-193, 111)
+position = Vector2(-1, 103)

@@ -24,7 +24,7 @@ spawn_player_at = Vector2(948, 286)
 size = Vector2(32, 120)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_bf3yh")]
-position = Vector2(-1, 1)
+position = Vector2(-143, 22)
 
 [node name="ItemLoader" type="Node2D" parent="." unique_id=1910747641]
 script = ExtResource("4_n3ybo")
