@@ -29,7 +29,7 @@ func start(path: String = "") -> String:
 	if path == "":
 		
 		if !first_load:
-			return ""
+			return "res://Areas/Above Ground/ White House Outside.tscn"
 		var areas := ResourceLoader.list_directory("res://Areas")
 		for area_folder in areas:
 			var rooms := ResourceLoader.list_directory("res://Areas/" + area_folder)

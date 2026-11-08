@@ -29,8 +29,10 @@ func _input(event: InputEvent):
 				hide() #take off map
 				vis = false #define 
 				Global.inventoryArray._incrementUpperLimit()
-				Global.inventoryArray.inventory.append(duplicate())
-				print("item pickup")
+				var item_res = ItemResource.new()
+				item_res.name = name
+				item_res.id = id
+				Global.inventoryArray.inventory.append(item_res)
 				Global.room_data[get_tree().current_scene.scene_file_path].on_item_pickup(id)
 	
 func on_drop(coords: Vector2) -> void:
