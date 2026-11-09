@@ -1,41 +1,34 @@
-extends TileMapLayer
+extends Node2D
 
-@export var player: CharacterBody2D
-@export var loading_zone_areas: PackedStringArray
-@export var entry_zones: Array[Area2D]
+signal after_startup
 
+signal data_done_loading
 
-func _ready() -> void:
-	if Global.loading_zone_id >= 0:
-		player.global_position = entry_zones[Global.loading_zone_id].global_position
-
-func _process(delta: float) -> void:
-	check_area_change()
+func _ready():
 	
-
-func check_area_change() -> void:
-	var cell = local_to_map(to_local(player.global_position))
-	var tile: Vector2 = get_cell_atlas_coords(cell)
-	var nextArea: String
-	Global.loading_zone_id = -1
-	if (tile.x == 0 and tile.y == 1):
-		nextArea = loading_zone_areas.get(0)
-		Global.loading_zone_id = 0
-	if (tile.x == 1 and tile.y == 2):
-		nextArea = loading_zone_areas.get(1)
-		Global.loading_zone_id = 1
-	if (tile.x == 0 and tile.y == 2):
-		nextArea = loading_zone_areas.get(2)
-		Global.loading_zone_id = 2
-	if (tile.x == 1 and tile.y == 1):
-		nextArea = loading_zone_areas.get(3)
-		Global.loading_zone_id = 3
-	if (tile.x == 2 and tile.y == 1):
-		nextArea = loading_zone_areas.get(4)
-		Global.loading_zone_id = 4
-	if (tile.x == 2 and tile.y == 2):
-		nextArea = loading_zone_areas.get(5)
-		Global.loading_zone_id = 5
-		
-	if (Global.loading_zone_id >= 0):
-		get_tree().change_scene_to_file(nextArea)
+	if (get_node("ItemManager")) == null:
+		print("No item manager!")
+		return
+	after_startup.connect(get_node("ItemManager").load_items)
+	data_done_loading.connect(get_node("ItemManager").remove_items)
+	
+	if FileAccess.file_exists("user://savedata.tres"):
+		Global.start("user://savedata.tres")
+		after_startup.emit()
+	else:
+		Global.start()
+		after_startup.emit()
+		Global.room_data[scene_file_path].load_data_from_scene(self)
+	
+	data_done_loading.emit()
+	
+func _process(_delta: float):
+	# for testing saving functionality
+	if Input.is_action_pressed("test_save"):
+		Global.save("user://savedata.tres", get_tree().current_scene.scene_file_path)
+	if Input.is_action_pressed("test_load"):
+		Global.player_initial_map_position = Vector2(0, 0)
+		if FileAccess.file_exists("user://savedata.tres"):
+			get_tree().change_scene_to_file(Global.start("user://savedata.tres"))
+		else:
+			get_tree().change_scene_to_file(Global.start())

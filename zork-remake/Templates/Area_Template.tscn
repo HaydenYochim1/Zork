@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dg7cp0vl0viko"]
+
+[ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_lmn7e"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="2_nq3aj"]
+[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="3_1t8s6"]
+[ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_tfvcm"]
+
+[node name="Node2D" type="Node2D" unique_id=629608632]
+script = ExtResource("1_lmn7e")
+
+[node name="ItemManager" type="Node2D" parent="." unique_id=1866171598]
+script = ExtResource("2_nq3aj")
+
+[node name="inventory" parent="." unique_id=1577688369 instance=ExtResource("3_1t8s6")]
+
+[node name="Player" parent="." unique_id=1235451594 instance=ExtResource("4_tfvcm")]

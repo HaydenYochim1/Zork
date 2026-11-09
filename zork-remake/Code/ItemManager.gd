@@ -1,4 +1,4 @@
-extends Node2D
+class_name ItemManager extends Node2D
 
 # all items and their id's will be stored in here
 var items: Dictionary = {

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bxvlxq4y66u8d"]
 
+[ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_0dbe5"]
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_cr2e3"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_6crwy"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="7_0dbe5"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
+script = ExtResource("1_0dbe5")
 
 [node name="Walkable" type="TileMapLayer" parent="." unique_id=2109699978]
 scale = Vector2(2, 2)
