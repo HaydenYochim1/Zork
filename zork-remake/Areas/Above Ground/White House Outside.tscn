@@ -3,8 +3,6 @@
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_pk8wk"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_otljg"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_bf3yh"]
-[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="4_n3ybo"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="5_s00r0"]
 
 [node name="WhiteHouseOutside" type="Node2D" unique_id=56631326]
 
@@ -25,9 +23,3 @@ size = Vector2(32, 120)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_bf3yh")]
 position = Vector2(-143, 22)
-
-[node name="ItemManager" type="Node2D" parent="." unique_id=1910747641]
-script = ExtResource("4_n3ybo")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("5_s00r0")]
-player = NodePath("../Player")

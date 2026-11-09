@@ -11,15 +11,15 @@ var can_move = true
 
 func _ready() -> void:
 	self.global_position = Global.player_initial_map_position # set the players pos on scene load5
-	if FileAccess.file_exists("user://savedata.tres"):
-		Global.start("user://savedata.tres")
-	else:
-		Global.start()
-		Global.room_data[get_tree().current_scene.scene_file_path].load_data_from_scene(get_tree().current_scene)
-		print("no save file, loadbing")
-	
-	data_done_loading.connect(get_node("../ItemManager").remove_items)
-	data_done_loading.emit()
+	#if FileAccess.file_exists("user://savedata.tres"):
+		#Global.start("user://savedata.tres")
+	#else:
+		#Global.start()
+		#Global.room_data[get_tree().current_scene.scene_file_path].load_data_from_scene(get_tree().current_scene)
+		#print("no save file, loadbing")
+	#
+	#data_done_loading.connect(get_node("../ItemManager").remove_items)
+	#data_done_loading.emit()
 	
 	
 		
