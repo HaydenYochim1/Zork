@@ -18,7 +18,7 @@ loading_zone_areas = PackedStringArray("res://Areas/UndergroundEntry.tscn", "", 
 entry_zones = [null, null, null]
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_ypdri")]
-position = Vector2(27, 453)
+position = Vector2(388, 1020)
 
 [node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("4_cqx1s")]
 player = NodePath("../Player")
