@@ -55,10 +55,10 @@ physics_quadrant_size = 32
 script = ExtResource("2_6yr63")
 player = NodePath("../Player")
 loading_zone_areas = PackedStringArray("res://Areas/Test_Area.tscn", "res://Areas/Test_Right.tscn", "res://Areas/StudioGallery.tscn", "res://Areas/Test_Left.tscn", "res://Areas/RoundRoom.tscn")
-entry_zones = [NodePath(""), NodePath("../Maze_LoadingZone"), NodePath(""), NodePath("")]
+entry_zones = [null, NodePath("../Maze_LoadingZone"), null, null]
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_ibj4r")]
-position = Vector2(1344, -191)
+position = Vector2(239, 422)
 
 [node name="ItemLoader" type="Node2D" parent="." unique_id=1026533301]
 position = Vector2(256, 298)
