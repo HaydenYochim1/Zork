@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c2ctl3ywvm2ah"]
+
+[ext_resource type="Script" uid="uid://vr1cb1oxft5g" path="res://inventory/item_stack_gui.gd" id="1_br7uk"]
+
+[node name="Panel" type="Panel" unique_id=203585086]
+script = ExtResource("1_br7uk")
+
+[node name="item" type="Sprite2D" parent="." unique_id=1556461781]
+scale = Vector2(0.5, 0.5)
