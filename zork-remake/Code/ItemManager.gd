@@ -1,4 +1,4 @@
-extends Node2D
+class_name ItemManager extends Node2D
 
 # all items and their id's will be stored in here
 var items: Dictionary = {
@@ -9,7 +9,7 @@ var item_names: Dictionary = {
 	0: "Placeholder"
 }
 
-func _ready() -> void:
+func load_items() -> void:
 	var root_path = get_tree().current_scene.scene_file_path
 	var room_save_data = Global.room_data[root_path]
 	
@@ -28,4 +28,4 @@ func remove_items():
 		if node is Item:
 			var item = node as Item
 			if room_save_data.find_item_in_room(item.id) < 0:
-				node.hide()
+				node.queue_free()

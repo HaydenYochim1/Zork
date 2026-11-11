@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://cqnvrsha2fpol"]
 
+[ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_4kagb"]
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_vj3h7"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_fc3vm"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_d7xpb"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_1q3ug"]
+[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_iohym"]
 
 [node name="Maze" type="Node2D" unique_id=344010680]
+script = ExtResource("1_4kagb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=638658686]
 scale = Vector2(2, 2)
@@ -29,3 +33,9 @@ position = Vector2(1324, 907)
 size = Vector2(64, 64)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_d7xpb")]
+
+[node name="ItemManager" type="Node2D" parent="." unique_id=2088999206]
+script = ExtResource("5_1q3ug")
+
+[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_iohym")]
+player = NodePath("../Player")

@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://bxwptjhe3ww3h"]
 
+[ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_fv325"]
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_kdgi6"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_o0dnp"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_flnc7"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_emyjl"]
+[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_lmqmc"]
 
 [node name="AtlantisRoom" type="Node2D" unique_id=990145025]
+script = ExtResource("1_fv325")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=149448966]
 scale = Vector2(2, 2)
@@ -25,3 +29,9 @@ size = Vector2(100, 20)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_flnc7")]
 position = Vector2(456, 817)
+
+[node name="ItemManager" type="Node2D" parent="." unique_id=560622665]
+script = ExtResource("5_emyjl")
+
+[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_lmqmc")]
+player = NodePath("../Player")

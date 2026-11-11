@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://bfx0wn3bm7fb1"]
 
+[ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_mq1rc"]
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_p2xv1"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_wqrce"]
 [ext_resource type="PackedScene" uid="uid://bqbn0xwq5ma4u" path="res://Objects/teleporter.tscn" id="3_4r7h0"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_4r7h0"]
+[ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_ype55"]
+[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="7_01e52"]
 
 [node name="Volcano" type="Node2D" unique_id=600739048]
+script = ExtResource("1_mq1rc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=261864694]
 scale = Vector2(2, 2)
@@ -57,3 +61,9 @@ size = Vector2(20, 100)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("4_4r7h0")]
 position = Vector2(3044, -809)
+
+[node name="ItemManager" type="Node2D" parent="." unique_id=1292071730]
+script = ExtResource("6_ype55")
+
+[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("7_01e52")]
+player = NodePath("../Player")
