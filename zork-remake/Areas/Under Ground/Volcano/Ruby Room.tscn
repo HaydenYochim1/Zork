@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="2_uiqv8"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="3_r6aqw"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_7mj4h"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_mlwa5"]
 
 [node name="RubyRoom" type="Node2D" unique_id=1518782930]
 script = ExtResource("1_yh86y")
@@ -32,6 +31,3 @@ size = Vector2(100, 20)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1936226422]
 script = ExtResource("5_7mj4h")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_mlwa5")]
-player = NodePath("../Player")

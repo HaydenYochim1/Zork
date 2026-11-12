@@ -1,7 +1,7 @@
-extends HBoxContainer
+class_name HotBar extends HBoxContainer
 
-@onready var inventory: Inventory = preload("res://inventory/items/player_inventory.tres")
-@onready var slots: Array = get_children()
+var inventory: Inventory
+var slots: Array
 var selected = 0
 
 func _input(event):
@@ -18,8 +18,10 @@ func _input(event):
 			update()
 		
 
-func _ready() -> void:
+func startup() -> void:
+	inventory = Global.inventory
 	update()
+	slots = get_children()
 	inventory.updated.connect(update)
 
 

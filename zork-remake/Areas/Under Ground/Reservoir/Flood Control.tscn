@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_x54dv"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_m3q1g"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_wii64"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_7ardp"]
 
 [node name="FloodControl" type="Node2D" unique_id=559049843]
 script = ExtResource("1_5ovw3")
@@ -36,6 +35,3 @@ position = Vector2(921, 925)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=736093963]
 script = ExtResource("5_wii64")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_7ardp")]
-player = NodePath("../Player")

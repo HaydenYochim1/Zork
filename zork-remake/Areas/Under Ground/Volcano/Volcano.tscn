@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bqbn0xwq5ma4u" path="res://Objects/teleporter.tscn" id="3_4r7h0"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_4r7h0"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_ype55"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="7_01e52"]
 
 [node name="Volcano" type="Node2D" unique_id=600739048]
 script = ExtResource("1_mq1rc")
@@ -64,6 +63,3 @@ position = Vector2(3044, -809)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1292071730]
 script = ExtResource("6_ype55")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("7_01e52")]
-player = NodePath("../Player")

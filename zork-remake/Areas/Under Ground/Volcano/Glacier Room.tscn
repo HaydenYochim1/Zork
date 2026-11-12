@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_js6fi"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_h1fuh"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_rc3lc"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_0dc6e"]
 
 [node name="GlacierRoom" type="Node2D" unique_id=975255030]
 script = ExtResource("1_b1lo2")
@@ -36,6 +35,3 @@ position = Vector2(896, 180)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=214482236]
 script = ExtResource("5_rc3lc")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_0dc6e")]
-player = NodePath("../Player")

@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="3_uar3v"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_de6nn"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_bjfwu"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_lclf0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qaaa1"]
 
@@ -50,6 +49,3 @@ position = Vector2(104, 318)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=24668470]
 script = ExtResource("5_bjfwu")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_lclf0")]
-player = NodePath("../Player")

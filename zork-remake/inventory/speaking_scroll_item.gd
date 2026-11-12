@@ -1,6 +1,6 @@
-extends InventoryItem
+extends Item
 
-class_name SpeakingScrollItem
+class_name SpeakingScroll
 
 func use():
 	print("speaking")

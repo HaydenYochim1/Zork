@@ -5,12 +5,22 @@ signal after_startup
 signal data_done_loading
 
 func _ready():
-	
 	if (get_node("ItemManager")) == null:
 		print("No item manager!")
 		return
 	after_startup.connect(get_node("ItemManager").load_items)
 	data_done_loading.connect(get_node("ItemManager").remove_items)
+	
+	const hb = preload("res://Objects/hotbar.tscn")
+	var hotbar = hb.instantiate()
+	hotbar.name = "HotBar"
+	after_startup.connect(hotbar.startup)
+	add_child(hotbar)
+	
+	const ig = preload("res://Objects/inventory_gui.tscn")
+	var inventoryGUI = ig.instantiate()
+	after_startup.connect(inventoryGUI.startup)
+	add_child(inventoryGUI)
 	
 	if FileAccess.file_exists("user://savedata.tres"):
 		Global.start("user://savedata.tres")

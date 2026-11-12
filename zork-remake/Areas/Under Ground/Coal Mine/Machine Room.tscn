@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_gg5w8"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_2w2ix"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_flm8g"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_33ybm"]
 
 [node name="MachineRoom" type="Node2D" unique_id=2117131888]
 script = ExtResource("1_yk86m")
@@ -40,6 +39,3 @@ position = Vector2(-156, -156)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=429184090]
 script = ExtResource("5_flm8g")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_33ybm")]
-player = NodePath("../Player")

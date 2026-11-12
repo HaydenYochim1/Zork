@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccou74ujc0xe8"]
 
 [ext_resource type="Script" uid="uid://wrsswxn6p6hm" path="res://inventory/hotbar_slot.gd" id="1_6gi07"]
-[ext_resource type="Texture2D" uid="uid://cp3odus3ljhpj" path="res://inventory/items/inventorySlot.png" id="2_6gi07"]
+[ext_resource type="Texture2D" uid="uid://cp3odus3ljhpj" path="res://Assets/inventorySlot.png" id="2_6gi07"]
 [ext_resource type="PackedScene" uid="uid://c2ctl3ywvm2ah" path="res://inventory/item_stack_gui.tscn" id="3_w4el8"]
 
 [node name="HotbarSlot" type="Button" unique_id=858627306]

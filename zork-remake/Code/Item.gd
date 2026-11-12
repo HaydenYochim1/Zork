@@ -28,12 +28,13 @@ func _input(event: InputEvent):
 				#pickup item not in inventory
 				hide() #take off map
 				vis = false #define 
-				Global.inventoryArray._incrementUpperLimit()
 				var item_res = ItemResource.new()
 				item_res.name = name
 				item_res.id = id
-				Global.inventoryArray.inventory.append(item_res)
+				item_res.texture = texture
+				Global.inventory.insert(item_res)
 				Global.room_data[get_tree().current_scene.scene_file_path].on_item_pickup(id)
+				queue_free()
 	
 func on_drop(coords: Vector2) -> void:
 	Global.room_data[get_tree().current_scene.scene_file_path].on_item_drop(id, coords)

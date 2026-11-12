@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqjuooar663c8"]
 
-[ext_resource type="Texture2D" uid="uid://dq264k0vdnlm7" path="res://inventory/items/InventoryRect.png" id="1_t08cw"]
-[ext_resource type="Script" uid="uid://bs2scbidl4ydr" path="res://inventory/inventory_gui.gd" id="1_wrc4a"]
+[ext_resource type="Texture2D" uid="uid://dq264k0vdnlm7" path="res://Assets/InventoryRect.png" id="1_t08cw"]
+[ext_resource type="Script" uid="uid://bs2scbidl4ydr" path="res://Code/inventory_gui.gd" id="1_wrc4a"]
 [ext_resource type="PackedScene" uid="uid://b7hur4da7msp0" path="res://slot_gui.tscn" id="2_8oxm1"]
 
 [node name="InventoryGUI" type="Control" unique_id=1832771887]

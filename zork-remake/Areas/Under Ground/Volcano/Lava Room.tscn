@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="2_6pgq8"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="3_iowlf"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="4_iowlf"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="5_6trle"]
 
 [node name="LavaRoom" type="Node2D" unique_id=1656266603]
 script = ExtResource("1_6trle")
@@ -32,6 +31,3 @@ size = Vector2(100, 20)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1283870105]
 script = ExtResource("4_iowlf")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("5_6trle")]
-player = NodePath("../Player")

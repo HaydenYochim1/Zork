@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://5xut7625jq35" path="res://Objects/LoadingZone.tscn" id="5_54umg"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="6_yj33q"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="7_r1d1c"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="8_jipnn"]
 
 [node name="Node2D" type="Node2D" unique_id=690758868]
 script = ExtResource("2_pw6b8")
@@ -58,6 +57,3 @@ size = Vector2(20, 100)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1046353003]
 script = ExtResource("7_r1d1c")
-
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("8_jipnn")]
-player = NodePath("../Player")

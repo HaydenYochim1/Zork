@@ -9,6 +9,6 @@ func _ready():
 
 func collect(inventory: Inventory):
 	print("collected")
-	inventory.insert(item_res)
+	#inventory.insert(item_res)
 	queue_free()
 	

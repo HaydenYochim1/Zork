@@ -2,11 +2,13 @@ class_name ItemManager extends Node2D
 
 # all items and their id's will be stored in here
 var items: Dictionary = {
-	0: Item.new("res://Assets/item_placeholder.jpg")
+	0: Item.new("res://Assets/item_placeholder.jpg"),
+	1: Item.new("res://Assets/speaking_scroll_sprite.png")
 }
 
 var item_names: Dictionary = {
-	0: "Placeholder"
+	0: "Placeholder",
+	1: "Speaking Scroll"
 }
 
 func load_items() -> void:
@@ -19,6 +21,7 @@ func load_items() -> void:
 		item_to_add.global_position.x = item_data.y
 		item_to_add.global_position.y = item_data.z
 		item_to_add.name = item_names[int(item_data.x)]
+		item_to_add.id = int(item_data.x)
 		get_tree().current_scene.add_child.call_deferred(item_to_add)
 	
 func remove_items():
