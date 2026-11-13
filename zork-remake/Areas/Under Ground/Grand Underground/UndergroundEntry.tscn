@@ -100,3 +100,6 @@ size = Vector2(20, 100)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=149524634]
 script = ExtResource("7_3jown")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1656223391]
+color = Color(0, 0, 0, 1)

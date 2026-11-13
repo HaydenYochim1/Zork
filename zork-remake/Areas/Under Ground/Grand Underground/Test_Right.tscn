@@ -49,3 +49,6 @@ position = Vector2(104, 318)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=24668470]
 script = ExtResource("5_bjfwu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1135815059]
+color = Color(0, 0, 0, 1)

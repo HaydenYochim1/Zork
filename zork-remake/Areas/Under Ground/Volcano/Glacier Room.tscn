@@ -42,3 +42,6 @@ position = Vector2(575, 325)
 player = NodePath("../Player")
 upper_left_bound = Vector2(-1280, -320)
 lower_right_bound = Vector2(1024, 576)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1673877214]
+color = Color(0, 0, 0, 1)

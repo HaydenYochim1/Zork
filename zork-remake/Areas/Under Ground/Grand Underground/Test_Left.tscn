@@ -48,3 +48,6 @@ scale = Vector2(2, 2)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1152682734]
 script = ExtResource("5_mevxq")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1379777341]
+color = Color(0, 0, 0, 1)

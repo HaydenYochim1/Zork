@@ -46,3 +46,6 @@ size = Vector2(20, 100)
 [node name="ItemManager" type="Node2D" parent="." unique_id=840164219]
 script = ExtResource("6_v3ibu")
 metadata/_custom_type_script = "uid://dc7mdh5im22l8"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=227103182]
+color = Color(0, 0, 0, 1)

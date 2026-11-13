@@ -71,3 +71,6 @@ image_path = "res://Assets/speaking_scroll_sprite.png"
 player = NodePath("../Player")
 upper_left_bound = Vector2(0, 0)
 lower_right_bound = Vector2(1472, 896)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=855620048]
+color = Color(0, 0, 0, 1)
