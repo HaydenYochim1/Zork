@@ -105,7 +105,9 @@ func drop_hovered_item():
 		var drop = get_node("../ItemManager").items[item.id]
 		drop.id = item.id
 		drop.global_position = player.global_position + Vector2(60, 0)
+		Global.room_data[get_tree().current_scene.scene_file_path].on_item_drop(drop.id, drop.global_position)
 		get_tree().current_scene.add_child(drop)
+		print(Global.room_data[get_tree().current_scene.scene_file_path].items_in_room)
 		
 		return
 
