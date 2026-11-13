@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_50cjc"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_7ii74"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_siarj"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_gw0hh"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_qm4ww"]
 
 [node name="Reservoir" type="Node2D" unique_id=499190061]
 script = ExtResource("1_qm4ww")
@@ -44,5 +44,8 @@ position = Vector2(1348, 2196)
 [node name="ItemManager" type="Node2D" parent="." unique_id=1744267409]
 script = ExtResource("5_siarj")
 
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_gw0hh")]
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_qm4ww")]
+position = Vector2(575, 325)
 player = NodePath("../Player")
+upper_left_bound = Vector2(-1184, -1376)
+lower_right_bound = Vector2(3968, 2528)

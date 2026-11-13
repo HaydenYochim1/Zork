@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wq647gc0cui4"]
 
 [ext_resource type="PackedScene" uid="uid://1e0hdp7ru5kt" path="res://collectable.tscn" id="1_6lfb7"]
-[ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://inventory/items/speaking_scroll_sprite.png" id="2_gi1uc"]
+[ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://Assets/speaking_scroll_sprite.png" id="2_gi1uc"]
 [ext_resource type="Resource" uid="uid://dcpny6kcf61w6" path="res://inventory/items/speaking_scroll.tres" id="2_s62xl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi1uc"]

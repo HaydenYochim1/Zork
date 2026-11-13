@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_46tqc"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_aolpr"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_uds2y"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_t552x"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_krryc"]
 
 [node name="EgyptRoom" type="Node2D" unique_id=1167479990]
 script = ExtResource("1_krryc")
@@ -37,5 +37,8 @@ position = Vector2(0, 424)
 [node name="ItemManager" type="Node2D" parent="." unique_id=1243497074]
 script = ExtResource("5_uds2y")
 
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_t552x")]
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_krryc")]
+position = Vector2(575, 325)
 player = NodePath("../Player")
+upper_left_bound = Vector2(-512, -320)
+lower_right_bound = Vector2(576, 576)

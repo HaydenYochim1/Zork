@@ -1,7 +1,7 @@
-extends HBoxContainer
+class_name HotBar extends HBoxContainer
 
-@onready var inventory: Inventory = preload("res://inventory/items/player_inventory.tres")
-@onready var slots: Array = get_children()
+var inventory: Inventory
+var slots: Array
 var selected = 0
 
 func _input(event):
@@ -10,7 +10,9 @@ func _input(event):
 	if event.is_action_pressed("use"):
 		var selected_slot = inventory.slots[selected + find_offset()]
 		if selected_slot.item:
-			selected_slot.item.use() 
+			var itemmanager = get_node("../ItemManager")
+			var item_to_use = itemmanager.items[selected_slot.item.id]
+			item_to_use.use()
 	
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode in range(KEY_1, KEY_6):
@@ -18,8 +20,10 @@ func _input(event):
 			update()
 		
 
-func _ready() -> void:
+func startup() -> void:
+	inventory = Global.inventory
 	update()
+	slots = get_children()
 	inventory.updated.connect(update)
 
 

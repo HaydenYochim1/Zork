@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_nfws2"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_cs4ki"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_rxgdb"]
-[ext_resource type="PackedScene" uid="uid://cltj2vbqq8cv" path="res://Objects/inventory.tscn" id="6_qkqf3"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_of5dm"]
 
 [node name="TimberRoom" type="Node2D" unique_id=415695067]
 script = ExtResource("1_of5dm")
@@ -45,5 +45,8 @@ size = Vector2(64, 64)
 [node name="ItemManager" type="Node2D" parent="." unique_id=789419671]
 script = ExtResource("5_rxgdb")
 
-[node name="inventory" parent="." unique_id=1577688369 node_paths=PackedStringArray("player") instance=ExtResource("6_qkqf3")]
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_of5dm")]
+position = Vector2(575, 325)
 player = NodePath("../Player")
+upper_left_bound = Vector2(-256, -512)
+lower_right_bound = Vector2(896, 1216)

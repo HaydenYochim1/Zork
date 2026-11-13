@@ -1,17 +1,21 @@
-extends Control
+class_name InventoryGUI extends Control
 
-@onready var player: CharacterBody2D = $"../Player"
+var player: Player
 var is_open = false
-@onready var inventory: Inventory = preload("res://inventory/items/player_inventory.tres")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+var inventory: Inventory
+var slots: Array
 @onready var item_stack_gui_class = preload("res://inventory/item_stack_gui.tscn")
-@onready var hotbar: HBoxContainer = $"../Hotbar"
-@onready var collectable_scene = preload("res://collectable.tscn")
+@onready var hotbar: HBoxContainer
+@onready var item: Item
 
 
 var item_in_hand: ItemStackGUI
 
-func _ready():
+func startup():
+	hotbar = get_node("../HotBar")
+	slots = $NinePatchRect/GridContainer.get_children()
+	player = get_node("../Player")
+	inventory = Global.inventory
 	connect_slots()
 	inventory.updated.connect(update)
 	close()
@@ -98,10 +102,16 @@ func drop_hovered_item():
 		
 		var item = inventory.slots[i].item
 		inventory.remove_slot(inventory.slots[i])
-		var drop = collectable_scene.instantiate()
-		
-		drop.item_res = item
+		var drop = get_node("../ItemManager").items[item.id]
+		drop.id = item.id
 		drop.global_position = player.global_position + Vector2(60, 0)
 		get_tree().current_scene.add_child(drop)
 		
 		return
+
+func _physics_process(delta: float):
+	var cam = get_node("../Camera")
+	if cam == null:
+		return
+	global_position = cam.global_position + Vector2(-256, -194)
+	hotbar.global_position = cam.global_position + Vector2(-232, 150)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdp8dwy6iids"]
+
+[ext_resource type="Script" uid="uid://cfchnx4xy2i8n" path="res://Code/speaking_scroll_item.gd" id="1_30xwn"]
+
+[node name="SpeakingScroll" type="Sprite2D" unique_id=157950035]
+script = ExtResource("1_30xwn")

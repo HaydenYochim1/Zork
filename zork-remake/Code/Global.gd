@@ -19,30 +19,25 @@ var loading_zone_id: int = -1
 var room_data: Dictionary = {}
 
 # track inventory between rooms
-var inventoryArray: InventoryArray
+var inventory: Inventory
 
 func start(path: String = "") -> String:
 	# if no path, start new save file by initializing room_data
 	if path == "":
 		
-		if inventoryArray != null:
+		if inventory != null:
 			return "res://Areas/Above Ground/ White House Outside.tscn"
 		
-		#var areas := ResourceLoader.list_directory("res://Areas")
-		#for area_folder in areas:
-		#	var rooms := ResourceLoader.list_directory("res://Areas/" + area_folder)
-		#	for area in rooms:
-		#		room_data["res://Areas/" + area_folder + area] = RoomSaveData.new()
-		initialize_room_data("res://Areas/")
+		inventory = Inventory.new()
 		
-		inventoryArray = InventoryArray.new()
+		initialize_room_data("res://Areas/")
 		
 		return "res://Areas/Above Ground/ White House Outside.tscn"
 	# if there is a path, load save data into room_data
 	else:
 		var save_data := ResourceLoader.load(path, "DataSaver") as DataSaver
 		room_data = save_data.rooms
-		inventoryArray = save_data.inventory
+		inventory = save_data.inventory
 		return save_data.current_scene_path
 	
 func initialize_room_data(path: String):
@@ -59,9 +54,9 @@ func save(save_path: String, scene_path: String) -> void:
 		save_data = ResourceLoader.load(save_path, "DataSaver") as DataSaver
 	else:
 		save_data = DataSaver.new()
-		save_data.inventory = InventoryArray.new()
+		save_data.inventory = Inventory.new()
 	
 	save_data.current_scene_path = scene_path
 	save_data.rooms = room_data
-	save_data.inventory = inventoryArray
+	save_data.inventory = inventory
 	ResourceSaver.save(save_data, save_path)

@@ -1,34 +1,36 @@
-class_name Inventory extends CanvasLayer
+extends Resource
 
-@onready var item_list: ItemList = $PanelContainer/ItemList
-@export var player: CharacterBody2D
+class_name Inventory
 
-func _input(event):
-	if event.is_action_pressed("inventory"):
-		visible = not visible
+signal updated
+
+@export var slots: Array[InventorySlot]
+
+func _init():
+	for i in range(15):
+		slots.append(InventorySlot.new())
 		
-		if player == null:
-			print("no player assigned to inventory")
-		else:
-			player.can_move = not visible
-		refresh()
+func insert(item: ItemResource):
+	for i in range(slots.size()):
+		if !slots[i].item:
+			slots[i].item = item
+			break
+
+	updated.emit()
 	
-	if event.is_action_pressed("Drop"):
-		refresh()
+func remove_slot(inventory_slot: InventorySlot):
+	var index = slots.find(inventory_slot)
+	if index < 0: return
 	
+	slots[index] = InventorySlot.new()
+	updated.emit()
+
+func remove_item_at_index(idx):
+	slots[idx] = InventorySlot.new()
 	
-func refresh():
-	if player == null:
-		return
-		
-	var inventory_array = Global.inventoryArray
+func insert_slot(idx, inventory_slot: InventorySlot):
+	var old_idx = slots.find(inventory_slot)
+	remove_item_at_index(old_idx)
 	
-	if inventory_array == null:
-		print("Global's inventory is null!")
-		return
-	
-	item_list.clear()
-	
-	for item in inventory_array.inventory:
-		item_list.add_item(item.name)
-		
+	slots[idx] = inventory_slot
+	updated.emit()

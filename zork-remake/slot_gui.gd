@@ -1,15 +1,16 @@
-extends Button
+class_name SlotGUI extends Button
 
 
 @onready var background_sprite: Sprite2D = $background
 @onready var container: CenterContainer = $CenterContainer
 
-@onready var inventory = preload("res://inventory/items/player_inventory.tres")
+var inventory: Inventory
 
 var item_stack_gui: ItemStackGUI
 var index: int
 
 func insert(isg: ItemStackGUI):
+	inventory = Global.inventory
 	item_stack_gui = isg
 	background_sprite.frame = 1
 	container.add_child(item_stack_gui)

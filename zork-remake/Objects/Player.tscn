@@ -20,8 +20,6 @@ shape = SubResource("RectangleShape2D_fsw52")
 color = Color(0.16078432, 0.18039216, 0, 1)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1937191378]
-
 [node name="HurtBox" type="Area2D" parent="." unique_id=299766470]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1719777827]
