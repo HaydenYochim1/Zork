@@ -10,7 +10,9 @@ func _input(event):
 	if event.is_action_pressed("use"):
 		var selected_slot = inventory.slots[selected + find_offset()]
 		if selected_slot.item:
-			selected_slot.item.use() 
+			var itemmanager = get_node("../ItemManager")
+			var item_to_use = itemmanager.items[selected_slot.item.id]
+			item_to_use.use()
 	
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode in range(KEY_1, KEY_6):

@@ -16,4 +16,5 @@ script = ExtResource("2_nq3aj")
 [node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("4_lmn7e")]
 position = Vector2(575, 325)
 player = NodePath("../Player")
-lower_right_bound = Vector2(1472, 704)
+upper_left_bound = Vector2(-10000, -10000)
+lower_right_bound = Vector2(10000, 10000)

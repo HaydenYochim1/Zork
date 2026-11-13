@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_o0dnp"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_flnc7"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_emyjl"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_fv325"]
 
 [node name="AtlantisRoom" type="Node2D" unique_id=990145025]
 script = ExtResource("1_fv325")
@@ -31,3 +32,9 @@ position = Vector2(456, 817)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=560622665]
 script = ExtResource("5_emyjl")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_fv325")]
+position = Vector2(575, 325)
+player = NodePath("../Player")
+upper_left_bound = Vector2(-384, -320)
+lower_right_bound = Vector2(640, 960)

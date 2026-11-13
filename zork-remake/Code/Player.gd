@@ -9,7 +9,8 @@ class_name Player extends CharacterBody2D
 var can_move = true
 
 func _ready() -> void:
-	global_position = Global.player_initial_map_position # set the players pos on scene load5
+	if Global.inventory != null:
+		global_position = Global.player_initial_map_position # set the players pos on scene load5
 	
 		
 func _physics_process(delta: float) -> void:

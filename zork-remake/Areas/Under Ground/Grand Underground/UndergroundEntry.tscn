@@ -65,6 +65,7 @@ position = Vector2(256, 298)
 position = Vector2(792, 315)
 
 [node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("5_fpnjj")]
+visible = false
 position = Vector2(575, 325)
 player = NodePath("../Player")
 lower_right_bound = Vector2(1472, 704)

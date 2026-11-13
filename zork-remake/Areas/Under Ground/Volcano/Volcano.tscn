@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqbn0xwq5ma4u" path="res://Objects/teleporter.tscn" id="3_4r7h0"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_4r7h0"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_ype55"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="7_mq1rc"]
 
 [node name="Volcano" type="Node2D" unique_id=600739048]
 script = ExtResource("1_mq1rc")
@@ -63,3 +64,9 @@ position = Vector2(3044, -809)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1292071730]
 script = ExtResource("6_ype55")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("7_mq1rc")]
+position = Vector2(575, 325)
+player = NodePath("../Player")
+upper_left_bound = Vector2(-1408, -3456)
+lower_right_bound = Vector2(3328, 2440)

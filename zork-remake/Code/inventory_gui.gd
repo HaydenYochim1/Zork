@@ -102,9 +102,16 @@ func drop_hovered_item():
 		
 		var item = inventory.slots[i].item
 		inventory.remove_slot(inventory.slots[i])
-		var drop: Item = get_node("../ItemManager").items[item.id]
+		var drop = get_node("../ItemManager").items[item.id]
 		drop.id = item.id
 		drop.global_position = player.global_position + Vector2(60, 0)
 		get_tree().current_scene.add_child(drop)
 		
 		return
+
+func _physics_process(delta: float):
+	var cam = get_node("../Camera")
+	if cam == null:
+		return
+	global_position = cam.global_position + Vector2(-256, -194)
+	hotbar.global_position = cam.global_position + Vector2(-232, 150)

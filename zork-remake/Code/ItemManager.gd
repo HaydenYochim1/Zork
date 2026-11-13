@@ -3,7 +3,7 @@ class_name ItemManager extends Node2D
 # all items and their id's will be stored in here
 var items: Dictionary = {
 	0: Item.new("res://Assets/item_placeholder.jpg"),
-	1: Item.new("res://Assets/speaking_scroll_sprite.png")
+	1: SpeakingScroll.new("res://Assets/speaking_scroll_sprite.png")
 }
 
 var item_names: Dictionary = {
@@ -13,6 +13,10 @@ var item_names: Dictionary = {
 
 func load_items() -> void:
 	var root_path = get_tree().current_scene.scene_file_path
+	if !(root_path in Global.room_data.keys()):
+		print("Warning: this scene is not in the proper location, move it for full functionality!")	
+		return
+		
 	var room_save_data = Global.room_data[root_path]
 	
 	#load items in in the save data for the scene

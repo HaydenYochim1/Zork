@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_fc3vm"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_d7xpb"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_1q3ug"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_4kagb"]
 
 [node name="Maze" type="Node2D" unique_id=344010680]
 script = ExtResource("1_4kagb")
@@ -35,3 +36,9 @@ size = Vector2(64, 64)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=2088999206]
 script = ExtResource("5_1q3ug")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_4kagb")]
+position = Vector2(575, 325)
+player = NodePath("../Player")
+upper_left_bound = Vector2(-640, -576)
+lower_right_bound = Vector2(2816, 1216)

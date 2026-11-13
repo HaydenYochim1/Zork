@@ -7,7 +7,7 @@ signal updated
 @export var slots: Array[InventorySlot]
 
 func _init():
-	for i in range(20):
+	for i in range(15):
 		slots.append(InventorySlot.new())
 		
 func insert(item: ItemResource):

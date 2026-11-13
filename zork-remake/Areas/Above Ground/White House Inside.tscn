@@ -4,8 +4,10 @@
 [ext_resource type="TileSet" uid="uid://dv4s8iusgx7ra" path="res://Assets/Main Tile Set.tres" id="1_cr2e3"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_6crwy"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
-[ext_resource type="Script" uid="uid://dc6qgrlyk1017" path="res://Code/Item.gd" id="4_wc2dx"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_qtswm"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="7_0dbe5"]
+[ext_resource type="PackedScene" uid="uid://bdp8dwy6iids" path="res://Objects/speaking_scroll.tscn" id="7_s3e07"]
+[ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://Assets/speaking_scroll_sprite.png" id="8_wlrsk"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
 script = ExtResource("1_0dbe5")
@@ -57,11 +59,16 @@ next_scene_path = "uid://cd7d2t2twbhm6"
 spawn_player_at = Vector2(397, 1017)
 size = Vector2(100, 20)
 
-[node name="Placeholder" type="Sprite2D" parent="." unique_id=414825467]
-position = Vector2(500, 100)
-scale = Vector2(0.1, 0.1)
-script = ExtResource("4_wc2dx")
-image_path = "res://Assets/item_placeholder.jpg"
-
 [node name="ItemManager" type="Node2D" parent="." unique_id=698328360]
 script = ExtResource("6_qtswm")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("7_0dbe5")]
+player = NodePath("../Player")
+upper_left_bound = Vector2(192, -192)
+lower_right_bound = Vector2(1088, 704)
+
+[node name="SpeakingScroll" parent="." unique_id=157950035 instance=ExtResource("7_s3e07")]
+position = Vector2(544, 96)
+texture = ExtResource("8_wlrsk")
+id = 1
+image_path = "res://Assets/speaking_scroll_sprite.png"

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_7vae0"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_om4n1"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_lwuhg"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_38j0b"]
 
 [node name="EgyptViewingHallway" type="Node2D" unique_id=671102177]
 script = ExtResource("1_38j0b")
@@ -31,3 +32,9 @@ position = Vector2(-941, -382)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=339941415]
 script = ExtResource("5_lwuhg")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_38j0b")]
+position = Vector2(575, 325)
+player = NodePath("../Player")
+upper_left_bound = Vector2(-1088, -512)
+lower_right_bound = Vector2(2176, 256)

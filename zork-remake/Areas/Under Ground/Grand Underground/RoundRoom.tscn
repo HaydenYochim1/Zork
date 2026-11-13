@@ -25,8 +25,8 @@ position = Vector2(128, -247)
 position = Vector2(575, 325)
 script = ExtResource("4_6kecy")
 player = NodePath("../Player")
-upper_left_bound = Vector2(0, -1216)
-lower_right_bound = Vector2(4480, 3840)
+upper_left_bound = Vector2(-64, -1280)
+lower_right_bound = Vector2(4544, 2304)
 
 [node name="TwistyPassages_LoadingZone" parent="." unique_id=970971674 instance=ExtResource("5_54umg")]
 position = Vector2(1312, 448)

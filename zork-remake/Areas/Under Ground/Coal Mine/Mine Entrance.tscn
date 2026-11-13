@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_gdyd4"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_8hxej"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_d77m6"]
+[ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_88c00"]
 
 [node name="MineEntrance" type="Node2D" unique_id=2132270358]
 script = ExtResource("1_88c00")
@@ -44,3 +45,9 @@ position = Vector2(-1, 103)
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=1093469830]
 script = ExtResource("5_d77m6")
+
+[node name="Camera" parent="." unique_id=1694891149 node_paths=PackedStringArray("player") instance=ExtResource("6_88c00")]
+position = Vector2(575, 325)
+player = NodePath("../Player")
+upper_left_bound = Vector2(-2048, -1472)
+lower_right_bound = Vector2(896, 256)
