@@ -18,8 +18,9 @@ var loading_zone_id: int = -1
 # Dictionary to keep track of data in each room
 var room_data: Dictionary = {}
 
-# track inventory between rooms
+# track inventory and health between rooms
 var inventory: Inventory
+var player_health: int
 
 func start(path: String = "") -> String:
 	# if no path, start new save file by initializing room_data
@@ -29,6 +30,7 @@ func start(path: String = "") -> String:
 			return "res://Areas/Above Ground/ White House Outside.tscn"
 		
 		inventory = Inventory.new()
+		player_health = 3
 		
 		initialize_room_data("res://Areas/")
 		
@@ -38,6 +40,7 @@ func start(path: String = "") -> String:
 		var save_data := ResourceLoader.load(path, "DataSaver") as DataSaver
 		room_data = save_data.rooms
 		inventory = save_data.inventory
+		player_health = save_data.player_health
 		return save_data.current_scene_path
 	
 func initialize_room_data(path: String):
@@ -59,4 +62,5 @@ func save(save_path: String, scene_path: String) -> void:
 	save_data.current_scene_path = scene_path
 	save_data.rooms = room_data
 	save_data.inventory = inventory
+	save_data.player_health = player_health
 	ResourceSaver.save(save_data, save_path)

@@ -24,6 +24,14 @@ func _ready():
 	add_child(inventoryGUI)
 	inventoryGUI.z_index = 3
 	
+	const hg = preload("res://Objects/HealthGUI.tscn")
+	var healthGUI = hg.instantiate()
+	after_startup.connect(healthGUI.startup)
+	add_child(healthGUI)
+	healthGUI.z_index = 3
+	
+	
+	
 	if FileAccess.file_exists("user://savedata.tres"):
 		Global.start("user://savedata.tres")
 		after_startup.emit()

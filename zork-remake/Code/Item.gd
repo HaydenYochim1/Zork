@@ -34,7 +34,7 @@ func _input(event: InputEvent):
 				item_res.texture = texture
 				Global.inventory.insert(item_res)
 				Global.room_data[get_tree().current_scene.scene_file_path].on_item_pickup(id)
-				queue_free()
+				get_parent().remove_child(self)
 	
 func on_drop(coords: Vector2) -> void:
 	Global.room_data[get_tree().current_scene.scene_file_path].on_item_drop(id, coords)

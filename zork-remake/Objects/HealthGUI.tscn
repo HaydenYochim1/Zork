@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d07kcsqqnoue4"]
+
+[ext_resource type="Script" uid="uid://bakao542x8o4q" path="res://Code/health_gui.gd" id="1_escwh"]
+[ext_resource type="Texture2D" uid="uid://xi4j85bsimtp" path="res://Assets/alive_heart.png" id="2_nyj00"]
+[ext_resource type="Texture2D" uid="uid://dljxae473vinu" path="res://Assets/dead_heart.png" id="3_tampe"]
+
+[node name="HealthGUI" type="Node2D" unique_id=298311201]
+script = ExtResource("1_escwh")
+
+[node name="AliveHeart" type="Sprite2D" parent="." unique_id=19900343]
+z_index = 10
+position = Vector2(6.400009, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("2_nyj00")
+
+[node name="AliveHeart2" type="Sprite2D" parent="." unique_id=792017548]
+z_index = 10
+position = Vector2(70.40001, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("2_nyj00")
+
+[node name="AliveHeart3" type="Sprite2D" parent="." unique_id=1153860503]
+z_index = 10
+position = Vector2(134.40001, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("2_nyj00")
+
+[node name="DeadHeart" type="Sprite2D" parent="." unique_id=1470685360]
+position = Vector2(6.400009, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("3_tampe")
+
+[node name="DeadHeart2" type="Sprite2D" parent="." unique_id=2112723194]
+position = Vector2(70.40001, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("3_tampe")
+
+[node name="DeadHeart3" type="Sprite2D" parent="." unique_id=1197443410]
+position = Vector2(134.40001, 6.400009)
+scale = Vector2(2.4000006, 2.4000006)
+texture = ExtResource("3_tampe")
