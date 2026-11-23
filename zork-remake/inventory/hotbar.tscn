@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs0uhy0jmuc5p"]
 
 [ext_resource type="PackedScene" uid="uid://ccou74ujc0xe8" path="res://inventory/hotbar_slot.tscn" id="1_aba1q"]
-[ext_resource type="Script" uid="uid://c01v6ki4k2r32" path="res://inventory/hotbar.gd" id="1_jxmj8"]
+[ext_resource type="Script" uid="uid://c01v6ki4k2r32" path="res://Code/hotbar.gd" id="1_jxmj8"]
 
 [node name="Hotbar" type="HBoxContainer" unique_id=871179393]
 offset_right = 116.0

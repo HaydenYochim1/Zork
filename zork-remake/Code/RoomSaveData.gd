@@ -28,6 +28,7 @@ func on_item_pickup(item_id: int) -> void:
 	
 func on_item_drop(item_id: int, coords: Vector2) -> void:
 	items_in_room.append(Vector3(item_id, coords.x, coords.y))
+	print(items_in_room)
 	
 func on_item_use(item_id: int):
 	items_used_ids.append(item_id)

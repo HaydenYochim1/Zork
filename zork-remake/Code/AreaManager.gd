@@ -11,14 +11,14 @@ func _ready():
 	after_startup.connect(get_node("ItemManager").load_items)
 	data_done_loading.connect(get_node("ItemManager").remove_items)
 	
-	const hb = preload("res://Objects/hotbar.tscn")
+	const hb = preload("res://inventory/hotbar.tscn")
 	var hotbar = hb.instantiate()
 	hotbar.name = "HotBar"
 	after_startup.connect(hotbar.startup)
 	add_child(hotbar)
 	hotbar.z_index = 3
 	
-	const ig = preload("res://Objects/inventory_gui.tscn")
+	const ig = preload("res://inventory/inventory_gui.tscn")
 	var inventoryGUI = ig.instantiate()
 	after_startup.connect(inventoryGUI.startup)
 	add_child(inventoryGUI)

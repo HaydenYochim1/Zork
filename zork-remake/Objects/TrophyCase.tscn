@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://iob3pm3wq7mb"]
+
+[ext_resource type="Script" uid="uid://oi2jamr6rsqn" path="res://Code/trophy_case.gd" id="1_psv3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsw52"]
+size = Vector2(352, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1690325298]
+script = ExtResource("1_psv3q")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1138899837]
+scale = Vector2(2.2, 1)
+color = Color(0.25863215, 0.1436125, 7.219613e-08, 1)
+polygon = PackedVector2Array(0, 32, 160, 32, 160, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481958945]
+position = Vector2(176, 16)
+shape = SubResource("RectangleShape2D_fsw52")

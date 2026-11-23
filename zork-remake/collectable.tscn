@@ -1,12 +1,27 @@
 [gd_scene format=3 uid="uid://1e0hdp7ru5kt"]
 
-[ext_resource type="Script" uid="uid://d2fj24kcwfisr" path="res://inventory/collectable.gd" id="1_3dk6v"]
+[sub_resource type="GDScript" id="GDScript_7oip2"]
+script/source = "extends Area2D
+class_name Collectable
+
+@export var item_res: InventoryItem
+
+func _ready():
+	if !item_res: return
+	$Sprite2D.texture = item_res.texture
+
+func collect(inventory: Inventory):
+	print(\"collected\")
+	#inventory.insert(item_res)
+	queue_free()
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dk6v"]
 resource_local_to_scene = true
 
 [node name="Collectable" type="Area2D" unique_id=299334244]
-script = ExtResource("1_3dk6v")
+script = SubResource("GDScript_7oip2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779520682]
 shape = SubResource("RectangleShape2D_3dk6v")

@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="4_jfpr3"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="6_qtswm"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="7_0dbe5"]
-[ext_resource type="PackedScene" uid="uid://bdp8dwy6iids" path="res://Objects/speaking_scroll.tscn" id="7_s3e07"]
+[ext_resource type="PackedScene" uid="uid://bdp8dwy6iids" path="res://Items/speaking_scroll.tscn" id="7_s3e07"]
 [ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://Assets/speaking_scroll_sprite.png" id="8_wlrsk"]
+[ext_resource type="PackedScene" uid="uid://iob3pm3wq7mb" path="res://Objects/TrophyCase.tscn" id="9_wlrsk"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
 script = ExtResource("1_0dbe5")
@@ -72,3 +73,6 @@ position = Vector2(544, 96)
 texture = ExtResource("8_wlrsk")
 id = 1
 image_path = "res://Assets/speaking_scroll_sprite.png"
+
+[node name="StaticBody2D" parent="." unique_id=1690325298 instance=ExtResource("9_wlrsk")]
+position = Vector2(332, 465)
