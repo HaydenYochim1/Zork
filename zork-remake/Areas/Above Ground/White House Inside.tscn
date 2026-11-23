@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bdp8dwy6iids" path="res://Items/speaking_scroll.tscn" id="7_s3e07"]
 [ext_resource type="Texture2D" uid="uid://wnc88poe0ain" path="res://Assets/speaking_scroll_sprite.png" id="8_wlrsk"]
 [ext_resource type="PackedScene" uid="uid://iob3pm3wq7mb" path="res://Objects/TrophyCase.tscn" id="9_wlrsk"]
+[ext_resource type="Texture2D" uid="uid://cq8jda8br2hs5" path="res://Assets/trophycaseGUI.png" id="10_a6jie"]
 
 [node name="WhiteHouse" type="Node2D" unique_id=411999557]
 script = ExtResource("1_0dbe5")
@@ -75,4 +76,9 @@ id = 1
 image_path = "res://Assets/speaking_scroll_sprite.png"
 
 [node name="StaticBody2D" parent="." unique_id=1690325298 instance=ExtResource("9_wlrsk")]
-position = Vector2(332, 465)
+position = Vector2(434, 467)
+
+[node name="TrophyCaseGUI" type="Sprite2D" parent="StaticBody2D" unique_id=2073624887]
+position = Vector2(437, -104)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_a6jie")
