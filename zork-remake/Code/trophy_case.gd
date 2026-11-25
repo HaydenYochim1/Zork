@@ -4,7 +4,7 @@ var trophies: Array[ItemResource]
 var open: bool
 
 @onready var gui = $TrophyCaseGUI
-var player: CharacterBody2D
+var player: Player
 
 func _ready():
 	player = get_node("../Player")
@@ -12,16 +12,11 @@ func _ready():
 		print("No player found!")
 	open = false
 	gui.hide()
-	for i in range(20):
-		var ir = ItemResource.new()
-		var img = Image.new()
-		img.load("res://Assets/speaking_scroll_sprite.png")
-		ir.texture = ImageTexture.create_from_image(img)
-		trophies.append(ir)
 
 func view():
 	if open:
 		return
+	player.can_move = false
 	var cam = get_node("../Camera")
 	if cam:
 		gui.global_position = cam.global_position
@@ -47,6 +42,7 @@ func close():
 	gui.hide()
 	if !open:
 		return
+	player.can_move = true
 	open = false
 	for trophy in gui.get_children():
 		trophy.queue_free()

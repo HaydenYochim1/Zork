@@ -3,12 +3,14 @@ class_name ItemManager extends Node2D
 # all items and their id's will be stored in here
 var items: Dictionary = {
 	0: Item.new("res://Assets/item_placeholder.jpg"),
-	1: SpeakingScroll.new("res://Assets/speaking_scroll_sprite.png")
+	1: SpeakingScroll.new("res://Assets/speaking_scroll_sprite.png"),
+	10: Trophy.new("res://Assets/trophy_placeholder.png")
 }
 
 var item_names: Dictionary = {
 	0: "Placeholder",
-	1: "Speaking Scroll"
+	1: "Speaking Scroll",
+	10: "Trophy"
 }
 
 func load_items() -> void:

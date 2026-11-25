@@ -12,6 +12,9 @@ func _input(event):
 		if selected_slot.item:
 			var itemmanager = get_node("../ItemManager")
 			var item_to_use = itemmanager.items[selected_slot.item.id]
+			get_tree().current_scene.add_child(item_to_use)
+			if item_to_use is Trophy:
+				inventory.remove_slot(selected_slot)
 			item_to_use.use()
 	
 	if event is InputEventKey and event.pressed and not event.echo:
