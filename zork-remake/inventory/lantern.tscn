@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://x1ax7bdujn04"]
 
+[ext_resource type="Script" uid="uid://d2fj24kcwfisr" path="res://inventory/collectable.gd" id="1_bv4fc"]
 [ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="1_rp2xr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv4fc"]
 resource_local_to_scene = true
 
 [node name="Lantern" type="Node2D" unique_id=448871132]
+script = ExtResource("1_bv4fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1100264002]
 shape = SubResource("RectangleShape2D_bv4fc")

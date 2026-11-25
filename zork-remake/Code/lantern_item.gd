@@ -1,6 +1,6 @@
-extends Collectable
+extends Item
 
-var vis = true
+class_name Lantern
 
 @onready var point_light: PointLight2D = $PointLight2D
 

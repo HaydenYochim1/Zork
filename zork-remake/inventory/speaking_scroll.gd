@@ -4,7 +4,7 @@ var vis = true
 #@onready var inventory_array = get_node("../InventoryArray")
 
 func use():
-	print("talking")
+	print("lantern_test")
 
 
 
