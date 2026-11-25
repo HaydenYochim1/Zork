@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cjxeg83xd36sy"]
 
 [ext_resource type="Script" uid="uid://cbf7rj4fholh0" path="res://Code/Player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://b7eurhw02a64j" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="2_yk4ok"]
+[ext_resource type="Script" uid="uid://3tmn61edexy8" path="res://Code/point_light_2d.gd" id="3_gijnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsw52"]
 size = Vector2(62, 62)
@@ -24,5 +26,12 @@ polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1719777827]
 shape = SubResource("RectangleShape2D_pcuty")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1409550244]
+color = Color(0.9243825, 0.7957385, 0.59571606, 1)
+energy = 0.75
+texture = ExtResource("2_yk4ok")
+texture_scale = 5.55
+script = ExtResource("3_gijnf")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -4,16 +4,8 @@
 [ext_resource type="Script" uid="uid://b4y1fi4i0bhmd" path="res://Code/AreaManager.gd" id="1_yk86m"]
 [ext_resource type="PackedScene" uid="uid://bfkcesxh65oc" path="res://Objects/portal.tscn" id="2_gg5w8"]
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_2w2ix"]
-[ext_resource type="Script" uid="uid://3tmn61edexy8" path="res://Code/point_light_2d.gd" id="5_33ybm"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_flm8g"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_yk86m"]
-
-[sub_resource type="Gradient" id="Gradient_sybfl"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uvqyy"]
-gradient = SubResource("Gradient_sybfl")
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 0)
 
 [node name="MachineRoom" type="Node2D" unique_id=2117131888]
 script = ExtResource("1_yk86m")
@@ -45,11 +37,6 @@ size = Vector2(64, 64)
 
 [node name="Player" parent="." unique_id=1235451594 instance=ExtResource("3_2w2ix")]
 position = Vector2(-156, -156)
-
-[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=362525055]
-texture = SubResource("GradientTexture2D_uvqyy")
-texture_scale = 0.55
-script = ExtResource("5_33ybm")
 
 [node name="ItemManager" type="Node2D" parent="." unique_id=429184090]
 script = ExtResource("5_flm8g")

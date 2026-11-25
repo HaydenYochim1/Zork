@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://u8n2ajdl2vbi"]
+
+[ext_resource type="Script" uid="uid://cfchnx4xy2i8n" path="res://Code/speaking_scroll_item.gd" id="1_48pqo"]
+[ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="1_d4sn1"]
+
+[node name="Lantern" type="Sprite2D" unique_id=157950035]
+texture = ExtResource("1_d4sn1")
+script = ExtResource("1_48pqo")
