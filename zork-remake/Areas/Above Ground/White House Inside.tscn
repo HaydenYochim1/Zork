@@ -19,7 +19,7 @@ tile_set = ExtResource("1_cr2e3")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
-[node name="Player" parent="." unique_id=1235451594 instance=ExtResource("4_jfpr3")]
+[node name="Player" parent="." unique_id=1235451594 groups=["player"] instance=ExtResource("4_jfpr3")]
 position = Vector2(615, 310)
 
 [node name="Portal [front door]" parent="." unique_id=608531790 instance=ExtResource("2_6crwy")]

@@ -1,14 +1,18 @@
 class_name ItemManager extends Node2D
 
+const LANTERN_SCENE = preload("res://inventory/lantern.tscn")
+
 # all items and their id's will be stored in here
 var items: Dictionary = {
 	0: Item.new("res://Assets/item_placeholder.jpg"),
-	1: SpeakingScroll.new("res://Assets/speaking_scroll_sprite.png")
+	1: SpeakingScroll.new("res://Assets/speaking_scroll_sprite.png"),
+	2: LANTERN_SCENE.instantiate()
 }
 
 var item_names: Dictionary = {
-	0: "Placeholder",
-	1: "Speaking Scroll"
+	0: "Placeh`older",
+	1: "Speaking Scroll",
+	2: "Lantern"
 }
 
 func load_items() -> void:

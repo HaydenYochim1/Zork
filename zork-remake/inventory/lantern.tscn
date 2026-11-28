@@ -1,16 +1,27 @@
 [gd_scene format=3 uid="uid://x1ax7bdujn04"]
 
-[ext_resource type="Script" uid="uid://d2fj24kcwfisr" path="res://inventory/collectable.gd" id="1_bv4fc"]
 [ext_resource type="Texture2D" uid="uid://gh07jgotojx6" path="res://icon.svg" id="1_rp2xr"]
+[ext_resource type="Script" uid="uid://dao82mblpp31m" path="res://Code/lantern_item.gd" id="2_bv4fc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv4fc"]
-resource_local_to_scene = true
+[sub_resource type="Gradient" id="Gradient_bv4fc"]
+offsets = PackedFloat32Array(0, 0.9909639)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[node name="Lantern" type="Node2D" unique_id=448871132]
-script = ExtResource("1_bv4fc")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pcuty"]
+gradient = SubResource("Gradient_bv4fc")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1100264002]
-shape = SubResource("RectangleShape2D_bv4fc")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328226236]
+[node name="Lantern" type="Sprite2D" unique_id=1587201646]
 texture = ExtResource("1_rp2xr")
+script = ExtResource("2_bv4fc")
+id = 2
+image_path = "res://icon.svg"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1623673844]
+color = Color(0.95686275, 0.78039217, 0.38431373, 1)
+texture = SubResource("GradientTexture2D_pcuty")
+texture_scale = 3.0

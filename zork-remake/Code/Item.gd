@@ -16,10 +16,18 @@ func _init(ipath := image_path):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if image_path == "":
+		push_error("%s has no image_path set" % name)
+		return
+	texture = load(image_path)
+	if texture:
+		scale = Vector2(64, 64) / texture.get_size()
+	"""
 	var img = Image.new()
 	img.load(image_path)
 	texture = ImageTexture.create_from_image(img)
 	scale = Vector2(64, 64)/texture.get_size()
+	"""
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:

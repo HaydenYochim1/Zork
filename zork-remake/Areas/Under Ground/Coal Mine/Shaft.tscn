@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjxeg83xd36sy" path="res://Objects/Player.tscn" id="3_2jaq1"]
 [ext_resource type="Script" uid="uid://dc7mdh5im22l8" path="res://Code/ItemManager.gd" id="5_5iatl"]
 [ext_resource type="PackedScene" uid="uid://df86u7a214rg2" path="res://Objects/MovingCamera.tscn" id="6_vbvao"]
+[ext_resource type="PackedScene" uid="uid://x1ax7bdujn04" path="res://inventory/lantern.tscn" id="7_5iatl"]
 
 [node name="Shaft" type="Node2D" unique_id=1039414234]
 script = ExtResource("1_vbvao")
@@ -58,3 +59,6 @@ lower_right_bound = Vector2(384, 1280)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=523618825]
 color = Color(0, 0, 0, 1)
+
+[node name="Lantern" parent="." unique_id=1587201646 instance=ExtResource("7_5iatl")]
+position = Vector2(-31, -135)
